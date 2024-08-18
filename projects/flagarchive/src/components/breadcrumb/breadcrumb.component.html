@@ -1,8 +1,12 @@
 @for (item of items(); track $index) {
-  <a
+  <button
+    flagButton
+    ghost
     tabindex="0"
     (click)="selectItem(item)"
     (keyup)="selectItem(item)"
-  >{{ item.title }}</a>
-  /
+  >
+    {{ item.title }}
+  </button>
+  <flag-icon>keyboard_arrow_right</flag-icon>
 }

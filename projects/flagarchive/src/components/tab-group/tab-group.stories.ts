@@ -5,7 +5,7 @@ import { Tab } from '../tab';
 
 import { FlagTabGroupComponent } from './tab-group.component';
 
-type TabGroupArgs = {
+interface TabGroupArgs {
   active?: number;
   tabs: Tab[];
 };
@@ -32,7 +32,7 @@ const meta: Meta<TabGroupArgs> = {
   render: args => ({
     props: args,
   }),
-  argTypes: {}
+  argTypes: {},
 };
 
 export default meta;

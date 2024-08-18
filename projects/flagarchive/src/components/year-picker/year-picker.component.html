@@ -1,13 +1,24 @@
-<button flagButton [disabled]="min === activeRange[0]" (click)="previous()">
-  <flag-icon>keyboard_arrow_up</flag-icon>
-</button>
+<div class="actions">
+  <button flagButton [disabled]="min() === activeRange[0]" (click)="goToStart()">
+    <flag-icon>keyboard_double_arrow_left</flag-icon>
+  </button>
+  <button flagButton [disabled]="min() === activeRange[0]" (click)="previous()">
+    <flag-icon>keyboard_arrow_left</flag-icon>
+  </button>
+  <button flagButton [disabled]="max() === activeRange[1]" (click)="next()">
+    <flag-icon>keyboard_arrow_right</flag-icon>
+  </button>
+  <button flagButton [disabled]="max() === activeRange[1]" (click)="goToEnd()">
+    <flag-icon>keyboard_double_arrow_right</flag-icon>
+  </button>
+  <button flagButton [disabled]="max() === selected()" (click)="reset()">
+    <flag-icon>refresh</flag-icon>
+  </button>
+</div>
 <div class="years">
   @for (year of activeRange | range; track $index) {
-    <button flagButton [attr.raised]="year === selected || undefined" (click)="setYear(year)">
+    <button flagButton [attr.raised]="year === selected() || undefined" (click)="setYear(year)">
       {{ year }}
     </button>
   }
 </div>
-<button flagButton [disabled]="max === activeRange[1]" (click)="next()">
-  <flag-icon>keyboard_arrow_down</flag-icon>
-</button>

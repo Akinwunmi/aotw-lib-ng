@@ -9,13 +9,15 @@ import { FlagIconComponent } from '../icon';
 
 import { FlagYearPickerComponent } from './year-picker.component';
 
-type YearPickerArgs = Pick<
-  FlagYearPickerComponent,
-  'min' | 'max' | 'rangeSize' | 'selected'
->;
+interface YearPickerArgs {
+  min: number;
+  max: number;
+  rangeSize: number;
+  selected: number;
+}
 
 const args: YearPickerArgs = {
-  min: 1800,
+  min: 1799,
   max: 2024,
   rangeSize: 9,
   selected: 2024,
