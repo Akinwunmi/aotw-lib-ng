@@ -3,7 +3,7 @@ import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';
 import { FlagStepperComponent } from './stepper.component';
 import { Step } from './stepper.model';
 
-type StepperArgs = {
+interface StepperArgs {
   activeStep?: number;
   steps: Step[];
 };
@@ -14,7 +14,7 @@ const args: StepperArgs = {
     { disabled: false, label: 'Step 1' },
     { disabled: false, label: 'Step 2' },
     { disabled: true, label: 'Step 3' },
-  ]
+  ],
 };
 
 const meta: Meta<StepperArgs> = {
@@ -23,13 +23,13 @@ const meta: Meta<StepperArgs> = {
   tags: ['autodocs'],
   decorators: [
     moduleMetadata({
-      imports: [FlagStepperComponent]
-    })
+      imports: [FlagStepperComponent],
+    }),
   ],
   render: args => ({
     props: args
   }),
-  argTypes: {}
+  argTypes: {},
 };
 
 export default meta;

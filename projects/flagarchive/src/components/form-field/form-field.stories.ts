@@ -6,7 +6,7 @@ import {
 
 import { FlagFormFieldComponent } from './form-field.component';
 
-type FormFieldArgs = {
+interface FormFieldArgs {
   disabled?: boolean;
   errorMessage?: string;
   infoMessage?: string;
@@ -36,8 +36,8 @@ const meta: Meta<FormFieldArgs> = {
   tags: ['autodocs'],
   decorators: [
     moduleMetadata({
-      imports: [FlagFormFieldComponent]
-    })
+      imports: [FlagFormFieldComponent],
+    }),
   ],
   render: ({
     disabled,
@@ -66,17 +66,17 @@ const meta: Meta<FormFieldArgs> = {
           ${value && `value="${value}"`}
         />` : ''}
       </flag-form-field>
-    `
+    `,
   }),
   argTypes: {
     inputType: {
       control: 'select',
-      options: ['text']
+      options: ['text'],
     },
     label: {
-      control: 'text'
+      control: 'text',
     },
-  }
+  },
 };
 
 export default meta;

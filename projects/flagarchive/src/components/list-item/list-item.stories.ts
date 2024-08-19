@@ -4,7 +4,7 @@ import { FlagIconComponent } from '../icon';
 
 import { FlagListItemComponent } from './list-item.component';
 
-type ListItemArgs = {
+interface ListItemArgs {
   active?: boolean;
   disabled?: boolean;
   interactive?: boolean;
@@ -19,7 +19,7 @@ const args: ListItemArgs = {
   interactive: true,
   label: 'List Item',
   prefix: '',
-  suffix: ''
+  suffix: '',
 };
 
 const meta: Meta<ListItemArgs> = {
@@ -29,7 +29,7 @@ const meta: Meta<ListItemArgs> = {
   decorators: [
     moduleMetadata({
       imports: [FlagIconComponent, FlagListItemComponent],
-    })
+    }),
   ],
   render: ({label, prefix, suffix, ...args}) => ({
     props: args,
@@ -43,12 +43,12 @@ const meta: Meta<ListItemArgs> = {
           <flag-icon style="font-size: var(--flag-size-sm);">${suffix}</flag-icon>
         ` : ''}
       </flag-list-item>
-    `
+    `,
   }),
   argTypes: {
     label: {
       control: 'text',
-      defaultValue: 'Chip'
+      defaultValue: 'Chip',
     },
   }
 };
@@ -61,7 +61,7 @@ export const Default: Story = { args };
 export const Active: Story = {
   args: {
     ...args,
-    active: true
+    active: true,
   }
 };
 
@@ -69,20 +69,20 @@ export const WithAffixes: Story = {
   args: {
     ...args,
     prefix: 'star',
-    suffix: 'keyboard_arrow_right'
-  }
+    suffix: 'keyboard_arrow_right',
+  },
 };
 
 export const NotInteractive: Story = {
   args: {
     ...args,
-    interactive: false
-  }
+    interactive: false,
+  },
 };
 
 export const Disabled: Story = {
   args: {
     ...args,
-    disabled: true
-  }
+    disabled: true,
+  },
 };

@@ -3,7 +3,7 @@ import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
 import { FlagIconComponent } from '../../components';
 import { FlagButtonDirective } from '../../directives';
 
-type StoryArgs = {
+interface StoryArgs {
   disabled?: boolean;
   ghost?: boolean;
   icon?: string;

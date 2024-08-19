@@ -19,14 +19,14 @@
   width: 100%;
 
   &:hover {
-    background-color: var(--flag-color-primary-100);
-    color: var(--flag-color-primary-600);
+    background-color: var(--flag-color-primary-200);
+    color: var(--flag-color-primary-700);
   }
 
   &:active,
   &.active {
-    background-color: var(--flag-color-primary-200);
-    color: var(--flag-color-primary-700);
+    background-color: var(--flag-color-primary-100);
+    color: var(--flag-color-primary-600);
   }
 
   &.disabled {

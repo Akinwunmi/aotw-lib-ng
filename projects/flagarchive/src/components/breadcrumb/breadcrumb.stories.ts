@@ -3,15 +3,16 @@ import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';
 import { FlagBreadcrumbComponent } from './breadcrumb.component';
 import { BreadcrumbItem } from './breadcrumb.model';
 
-type BreadcrumbArgs = {
+interface BreadcrumbArgs {
   items: BreadcrumbItem[];
 };
 
 const args: BreadcrumbArgs = {
   items: [
     { title: 'Home', link: '/' },
-    { title: 'Category', link: '/category' }
-  ]
+    { title: 'Category', link: '/category' },
+    { title: 'Subcategory', link: '/subcategory' },
+  ],
 };
 
 const meta: Meta<BreadcrumbArgs> = {
@@ -20,13 +21,13 @@ const meta: Meta<BreadcrumbArgs> = {
   tags: ['autodocs'],
   decorators: [
     moduleMetadata({
-      imports: [FlagBreadcrumbComponent]
-    })
+      imports: [FlagBreadcrumbComponent],
+    }),
   ],
   render: args => ({
-    props: args
+    props: args,
   }),
-  argTypes: {}
+  argTypes: {},
 };
 
 export default meta;

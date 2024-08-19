@@ -3,7 +3,7 @@ import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';
 import { FlagPillComponent } from './pill.component';
 import { PillTheme, PillType } from './pill.model';
 
-type PillArgs = {
+interface PillArgs {
   label: string;
   theme: PillTheme;
   type: PillType;
@@ -22,7 +22,7 @@ const meta: Meta<PillArgs> = {
   decorators: [
     moduleMetadata({
       imports: [FlagPillComponent],
-    })
+    }),
   ],
   render: ({ label, ...args }) => ({
     props: args,
@@ -30,12 +30,12 @@ const meta: Meta<PillArgs> = {
       <flag-pill [theme]="theme" [type]="type">
         ${label}
       </flag-pill>
-    `
+    `,
   }),
   argTypes: {
     label: {
       control: 'text',
-      defaultValue: 'Chip'
+      defaultValue: 'Chip',
     },
     theme: {
       control: 'select',
@@ -46,8 +46,8 @@ const meta: Meta<PillArgs> = {
       control: 'select',
       options: Object.values(PillType),
       defaultValue: PillType.Primary,
-    }
-  }
+    },
+  },
 };
 
 export default meta;

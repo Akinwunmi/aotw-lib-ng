@@ -1,17 +1,27 @@
+@use '../../core/styles/typography' as *;
+
 :host {
+  @include typography-body;
   background-color: var(--flag-color-grey-100);
   border-radius: var(--flag-radius-sm);
   box-shadow: var(--flag-elevation-xs);
   box-sizing: border-box;
+  color: var(--flag-color-primary-500);
   display: grid;
   gap: var(--flag-space-sm);
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr;
   width: max-content;
   padding: var(--flag-space-sm);
+}
+
+.actions {
+  align-items: center;
+  display: flex;
+  gap: var(--flag-space-sm);
 }
 
 .years {
   display: grid;
   gap: var(--flag-space-sm);
-  grid-template-columns: repeat(3, var(--flag-size-3xl));
+  grid-template-columns: repeat(3, auto);
 }
