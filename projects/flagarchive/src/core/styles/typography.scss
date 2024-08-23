@@ -1,29 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght@20..48,400&family=Inter:wght@300;400;500;600&display=block');
 
-@mixin typography-body {
+@mixin font-family-regular {
   font-family: var(--flag-font-family-primary);
   font-weight: var(--flag-font-weight-regular);
+}
+
+@mixin font-family-medium {
+  font-family: var(--flag-font-family-primary);
+  font-weight: var(--flag-font-weight-medium);
+}
+
+@mixin typography-header {
+  @include font-family-regular;
+  font-size: var(--flag-font-size-lg);
+  line-height: var(--flag-font-line-height-sm);
+}
+
+@mixin typography-header-medium {
+  @include font-family-medium;
+  font-size: var(--flag-font-size-lg);
+  line-height: var(--flag-font-line-height-sm);
+}
+
+@mixin typography-header-small {
+  @include font-family-regular;
+  font-size: var(--flag-font-size-md);
+  line-height: var(--flag-font-line-height-sm);
+}
+
+@mixin typography-header-small-medium {
+  @include font-family-medium;
+  font-size: var(--flag-font-size-md);
+  line-height: var(--flag-font-line-height-sm);
+}
+
+@mixin typography-body {
+  @include font-family-regular;
+  font-size: var(--flag-font-size-sm);
+  line-height: var(--flag-font-line-height-md);
+}
+
+@mixin typography-body-medium {
+  @include font-family-medium;
   font-size: var(--flag-font-size-sm);
   line-height: var(--flag-font-line-height-md);
 }
 
 @mixin typography-body-small {
-  font-family: var(--flag-font-family-primary);
-  font-weight: var(--flag-font-weight-regular);
+  @include font-family-regular;
   font-size: var(--flag-font-size-xs);
   line-height: var(--flag-font-line-height-xs);
 }
 
 @mixin typography-body-small-medium {
-  font-family: var(--flag-font-family-primary);
-  font-weight: var(--flag-font-weight-medium);
+  @include font-family-medium;
   font-size: var(--flag-font-size-xs);
   line-height: var(--flag-font-line-height-xs);
-}
-
-@mixin typography-header-small {
-  font-family: var(--flag-font-family-primary);
-  font-weight: var(--flag-font-weight-regular);
-  font-size: var(--flag-font-size-md);
-  line-height: var(--flag-font-line-height-sm);
 }

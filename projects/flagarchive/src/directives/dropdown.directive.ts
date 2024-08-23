@@ -3,7 +3,6 @@ import { TemplatePortal } from '@angular/cdk/portal';
 import {
   DestroyRef,
   Directive,
-  effect,
   ElementRef,
   HostListener,
   inject,
@@ -28,8 +27,9 @@ export class FlagDropdownDirective implements OnDestroy {
   public isOpen = model(false);
 
   @HostListener('click')
-  public toggle(): void {
+  public handleClick(): void {
     this.isOpen.set(!this.isOpen());
+    this.toggle();
   }
 
   private destroyRef = inject(DestroyRef);
@@ -38,16 +38,6 @@ export class FlagDropdownDirective implements OnDestroy {
   private viewContainerRef = inject(ViewContainerRef);
 
   private overlayRef?: OverlayRef;
-
-  public constructor() {
-    effect(() => {
-      if (this.isOpen()) {
-        this.open();
-      } else {
-        this.close();
-      }
-    });
-  }
 
   public ngOnDestroy(): void {
     this.isOpen.set(false);
@@ -97,7 +87,16 @@ export class FlagDropdownDirective implements OnDestroy {
       takeUntilDestroyed(this.destroyRef)
     ).subscribe(() => {
       this.isOpen.set(false);
+      this.toggle();
     });
+  }
+
+  private toggle() {
+    if (this.isOpen()) {
+      this.open();
+    } else {
+      this.close();
+    }
   }
 
   private actions(): Observable<MouseEvent | void> {
