@@ -1,0 +1,75 @@
+:host {
+  div {
+    border-radius: var(--flag-radius-sm);
+
+    flag-icon {
+      color: var(--flag-color-white);
+      font-size: var(--flag-font-size-md);
+      margin: calc(var(--flag-border-width-xs) * -1);
+      opacity: 0;
+      position: absolute;
+      transition: opacity var(--flag-animation-speed-default);
+    }
+  }
+  
+  &.checked,
+  &.indeterminate {
+    div {
+      background-color: var(--flag-color-primary);
+
+      flag-icon {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.indeterminate {
+    div {
+      border-color: var(--flag-color-primary);
+    }
+  }
+
+  &:hover {
+    &.checked,
+    &.indeterminate {
+      div {
+        background-color: var(--flag-color-primary-700);
+      }
+    }
+
+    &.indeterminate {
+      div {
+        border-color: var(--flag-color-primary-700);
+      }
+    }
+  }
+
+  &:active {
+    &.indeterminate {
+      div {
+        border-color: var(--flag-color-primary-600);
+      }
+    }
+  }
+
+  &.disabled {
+    div {
+      flag-icon {
+        color: var(--flag-color-grey-200);
+      }
+    }
+
+    &.checked,
+    &.indeterminate {
+      div {
+        background-color: var(--flag-color-grey-400);
+      }
+    }
+
+    &.indeterminate {
+      div {
+        border-color: var(--flag-color-grey-400);
+      }
+    }
+  }
+}

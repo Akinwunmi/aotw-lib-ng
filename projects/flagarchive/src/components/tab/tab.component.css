@@ -1,0 +1,20 @@
+:host {
+  align-items: center;
+  color: var(--flag-color-primary-500);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--flag-font-family-primary);
+  font-weight: var(--flag-font-weight-regular);
+  font-size: var(--flag-font-size-md);
+  height: var(--flag-size-sm);
+  line-height: var(--flag-font-line-height-sm);
+  padding: var(--flag-space-sm);
+  justify-content: center;
+  width: 100%;
+  
+  &.disabled {
+    background-color: var(--flag-color-grey-300);
+    color: var(--flag-color-grey-500);
+    pointer-events: none;
+  }
+}

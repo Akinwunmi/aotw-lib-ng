@@ -47,10 +47,11 @@
               "projects/flagarchive"
             ],
             "styles": [
-              "projects/flagarchive/src/core/styles/index.scss",
-              "projects/flagarchive/src/stories/assets/styles.scss"
+              "node_modules/@angular/cdk/overlay-prebuilt.css",
+              "projects/flagarchive/src/core/styles.css",
+              "projects/flagarchive/src/stories/assets/styles.css"
             ],
-            "port": 6006
+            "port": 1990
           }
         },
         "build-storybook": {
@@ -84,7 +85,7 @@
     "@schematics/angular:component": {
       "changeDetection": "OnPush",
       "prefix": "flag",
-      "style": "scss"
+      "style": "css"
     }
   },
   "cli": {

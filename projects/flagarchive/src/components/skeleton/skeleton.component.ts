@@ -6,8 +6,8 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: '',
-  styleUrl: './skeleton.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrl: './skeleton.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlagSkeletonComponent {
   @HostBinding('class.soft')

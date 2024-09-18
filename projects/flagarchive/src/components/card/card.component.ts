@@ -4,7 +4,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'flag-card',
   standalone: true,
-  styleUrl: './card.component.scss',
+  styleUrl: './card.component.css',
   templateUrl: './card.component.html',
 })
 export class FlagCardComponent {}

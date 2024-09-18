@@ -11,12 +11,14 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { Step } from './stepper.model';
 import { FlagStepperService } from './stepper.service';
+import { NgClass } from '@angular/common';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [NgClass],
   selector: 'flag-stepper',
   standalone: true,
-  styleUrls: ['./stepper.component.scss'],
+  styleUrls: ['./stepper.component.css'],
   templateUrl: './stepper.component.html',
 })
 export class FlagStepperComponent implements OnInit {
@@ -24,13 +26,11 @@ export class FlagStepperComponent implements OnInit {
   private destroyRef = inject(DestroyRef);
   private stepperService = inject(FlagStepperService);
 
-  public steps = model.required<Step[]>();  
+  public steps = model.required<Step[]>();
   public activeStep = model(0);
 
   public ngOnInit(): void {
-    this.stepperService.steps$.pipe(
-      takeUntilDestroyed(this.destroyRef)
-    ).subscribe(steps => {
+    this.stepperService.steps$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(steps => {
       this.steps.set(steps);
       this.cdr.detectChanges();
     });
