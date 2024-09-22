@@ -1,0 +1,7 @@
+{
+  "buildScriptName": "build:storybook",
+  "onlyChanged": true,
+  "projectId": "Project:66f06a084377f64906b71a3a",
+  "storybookConfigDir": "projects/flagarchive/.storybook",
+  "zip": true
+}

@@ -1,0 +1,59 @@
+:host {
+  align-items: center;
+  background-color: var(--flag-color-primary-100);
+  border-radius: var(--flag-radius-lg);
+  box-sizing: border-box;
+  color: var(--flag-color-primary-500);
+  display: inline-flex;
+  font-family: var(--flag-font-family-primary);
+  font-size: var(--flag-font-size-xs);
+  font-weight: var(--flag-font-weight-medium);
+  height: var(--flag-size-sm);
+  line-height: var(--flag-font-line-height-xs);
+  padding-inline: var(--flag-space-md);
+
+  &.dark {
+    background-color: var(--flag-color-primary-500);
+    color: var(--flag-color-white);
+  }
+
+  &.secondary {
+    background-color: var(--flag-color-secondary-100);
+    color: var(--flag-color-secondary-500);
+
+    &.dark {
+      background-color: var(--flag-color-secondary-500);
+      color: var(--flag-color-white);
+    }
+  }
+
+  &.success {
+    background-color: var(--flag-color-success-100);
+    color: var(--flag-color-success-600);
+
+    &.dark {
+      background-color: var(--flag-color-success-500);
+      color: var(--flag-color-white);
+    }
+  }
+
+  &.warning {
+    background-color: var(--flag-color-warning-100);
+    color: var(--flag-color-warning-600);
+
+    &.dark {
+      background-color: var(--flag-color-warning-500);
+      color: var(--flag-color-white);
+    }
+  }
+
+  &.error {
+    background-color: var(--flag-color-error-100);
+    color: var(--flag-color-error-600);
+
+    &.dark {
+      background-color: var(--flag-color-error-500);
+      color: var(--flag-color-white);
+    }
+  }
+}

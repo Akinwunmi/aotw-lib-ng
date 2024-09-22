@@ -1,0 +1,66 @@
+:host {
+  color: var(--flag-color-primary);
+  display: grid;
+  font-family: var(--flag-font-family-primary);
+  gap: var(--flag-space-2xl);
+  position: relative;
+  width: max-content;
+}
+
+p {
+  cursor: pointer;
+  margin: 0;
+  padding-left: calc(var(--flag-size-xs) + var(--flag-space-md));
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    border: 0.125rem solid var(--flag-color-grey-400);
+    border-radius: 50%;
+    content: '';
+    height: var(--flag-size-xs);
+    left: 0;
+    position: absolute;
+    width: var(--flag-size-xs);
+    z-index: 2;
+  }
+
+  &:not(:last-of-type) {
+    &::after {
+      background-color: var(--flag-color-primary);
+      content: '';
+      height: var(--flag-space-3xl);
+      left: calc(var(--flag-space-sm) + 0.125rem / 2);
+      position: absolute;
+      top: calc(var(--flag-size-xs) + 0.125rem);
+      width: 0.125rem;
+    }
+  }
+
+  &.completed {
+    &::before {
+      background-color: var(--flag-color-primary-500);
+    }
+  }
+
+  &.active {
+    &::before {
+      border-color: var(--flag-color-primary-500);
+    }
+
+    &::after {
+      background-color: var(--flag-color-grey-400);
+    }
+  }
+
+  &.disabled {
+    color: var(--flag-color-grey-500);
+    pointer-events: none;
+    user-select: none;
+
+    &::before {
+      background-color: var(--flag-color-grey-300);
+      border-color: var(--flag-color-grey-400);
+    }
+  }
+}

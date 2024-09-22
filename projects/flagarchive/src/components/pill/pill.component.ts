@@ -6,7 +6,7 @@ import { PillTheme, PillType } from './pill.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'flag-pill',
   standalone: true,
-  styleUrl: './pill.component.scss',
+  styleUrl: './pill.component.css',
   templateUrl: './pill.component.html',
 })
 export class FlagPillComponent {

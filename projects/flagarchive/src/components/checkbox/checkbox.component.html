@@ -1,0 +1,12 @@
+<input type="checkbox" [checked]="checked()" [id]="uuid" [name]="name()">
+<div
+  role="checkbox"
+  [attr.aria-checked]="checked()"
+  [attr.aria-disabled]="disabled()"
+  [tabindex]="disabled() ? -1 : 0"
+>
+  <flag-icon>{{ indeterminate() ? 'remove' : 'check' }}</flag-icon>
+</div>
+<label tabindex="-1" [for]="uuid">
+  <ng-content />
+</label>

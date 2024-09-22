@@ -9,7 +9,7 @@ import { BreadcrumbItem } from './breadcrumb.model';
   imports: [FlagIconComponent],
   selector: 'flag-breadcrumb',
   standalone: true,
-  styleUrl: './breadcrumb.component.scss',
+  styleUrl: './breadcrumb.component.css',
   templateUrl: './breadcrumb.component.html',
 })
 export class FlagBreadcrumbComponent {

@@ -4,7 +4,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'flag-form-field',
   standalone: true,
-  styleUrl: './form-field.component.scss',
+  styleUrl: './form-field.component.css',
   templateUrl: './form-field.component.html',
 })
 export class FlagFormFieldComponent {

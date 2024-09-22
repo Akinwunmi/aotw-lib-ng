@@ -12,7 +12,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'flag-icon',
   standalone: true,
-  styleUrl: './icon.component.scss',
+  styleUrl: './icon.component.css',
   templateUrl: './icon.component.html',
 })
 export class FlagIconComponent implements OnInit {

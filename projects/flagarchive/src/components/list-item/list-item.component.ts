@@ -1,15 +1,10 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  HostBinding,
-  input,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding, input } from '@angular/core';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'flag-list-item',
   standalone: true,
-  styleUrl: './list-item.component.scss',
+  styleUrl: './list-item.component.css',
   templateUrl: './list-item.component.html',
 })
 export class FlagListItemComponent {

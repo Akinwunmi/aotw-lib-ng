@@ -4,8 +4,7 @@
   "scripts": {
     "ng": "ng",
     "dev": "ng run flagarchive:storybook",
-    "build": "ng build flagarchive && npm run build:core",
-    "build:core": "sass projects/flagarchive/src/core/styles/index.scss:dist/flagarchive/core/styles.scss --no-source-map",
+    "build": "ng build flagarchive",
     "build:storybook": "ng run flagarchive:build-storybook",
     "publish": "cd dist/flagarchive && npm publish --access=public",
     "watch": "ng build --watch --configuration development",
@@ -54,7 +53,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^18.0.0",
-    "sass": "^1.77.6",
+    "prettier": "^3.3.3",
     "storybook": "^8.1.9",
     "typescript": "^5.4.5",
     "typescript-eslint": "8.1.0"

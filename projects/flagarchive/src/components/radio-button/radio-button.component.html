@@ -1,0 +1,10 @@
+<input type="radio" [checked]="checked()" [id]="uuid" [name]="name()">
+<div
+  role="radio"
+  [attr.aria-checked]="checked()"
+  [attr.aria-disabled]="disabled()"
+  [tabindex]="disabled() ? -1 : 0"
+></div>
+<label tabindex="-1" [for]="uuid">
+  <ng-content />
+</label>

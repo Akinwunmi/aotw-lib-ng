@@ -3,5 +3,12 @@
   "dest": "../../dist/flagarchive",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "assets": [
+    {
+      "input": "./src/core",
+      "glob": "**/*.css",
+      "output": "core"
+    }
+  ]
 }

@@ -1,11 +1,11 @@
 @for (step of steps(); track i; let i = $index) {
-  <button
-    flagButton
-    [attr.ghost]="activeStep() !== i || undefined"
-    [attr.raised]="activeStep() === i || undefined"
-    [disabled]="step.disabled"
-    (click)="setActiveStep(i)"
+  <p
+    tabindex="0"
+    [class.active]="activeStep() === 1"
+    [class.completed]="activeStep() - 1 === i"
+    [class.disabled]="step.disabled"
+    (click)="setActiveStep(i)" (keydown)="setActiveStep(i)"
   >
     {{ step.label }}
-  </button>
+  </p>
 }

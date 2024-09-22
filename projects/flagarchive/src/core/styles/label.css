@@ -1,0 +1,13 @@
+[flagLabel] {
+  color: var(--flag-color-primary-500);
+  font-family: var(--flag-font-family-primary);
+  font-size: var(--flag-font-size-sm);
+  line-height: var(--flag-font-line-height-md);
+
+  &[required] {
+    &::after {
+      content: '*';
+      padding-left: var(--flag-space-xs);
+    }
+  }
+}
