@@ -1,0 +1,26 @@
+<header>
+  <div>
+    <img ngSrc="images/logo.svg" alt="Flag Archive Logo" />
+    Flag Archive
+    <flag-pill [type]="pillType.Warning">Playground</flag-pill>
+  </div>
+  <button flagButton ghost [flagDropdownTrigger]="dropdown" [(isOpen)]="isMenuOpen">
+    <flag-icon>menu</flag-icon>
+  </button>
+</header>
+<main>
+  <flag-checkbox [checked]="isMenuOpen" (click)="toggleMenu()">Menu is open</flag-checkbox>
+</main>
+
+<ng-template #dropdown>
+  <flag-card>
+    <flag-list-item role="button" (click)="closeMenu()">
+      <flag-icon>edit</flag-icon>
+      Create
+    </flag-list-item>
+    <flag-list-item role="button" (click)="closeMenu()">
+      <flag-icon>logout</flag-icon>
+      Log out
+    </flag-list-item>
+  </flag-card>
+</ng-template>

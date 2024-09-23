@@ -11,39 +11,43 @@
       transition: opacity var(--flag-animation-speed-default);
     }
   }
+
+  &.checked {
+    div {
+      background-color: var(--flag-color-primary);
   
-  &.checked,
+      flag-icon {
+        opacity: 1;
+      }
+    }
+  }
+  
   &.indeterminate {
     div {
       background-color: var(--flag-color-primary);
+      border-color: var(--flag-color-primary);
 
       flag-icon {
         opacity: 1;
       }
     }
   }
-
-  &.indeterminate {
-    div {
-      border-color: var(--flag-color-primary);
-    }
-  }
-
+  
   &:hover {
-    &.checked,
-    &.indeterminate {
+    &.checked {
       div {
         background-color: var(--flag-color-primary-700);
       }
     }
-
+    
     &.indeterminate {
       div {
+        background-color: var(--flag-color-primary-700);
         border-color: var(--flag-color-primary-700);
       }
     }
   }
-
+  
   &:active {
     &.indeterminate {
       div {
@@ -51,7 +55,7 @@
       }
     }
   }
-
+  
   &.disabled {
     div {
       flag-icon {
@@ -59,8 +63,7 @@
       }
     }
 
-    &.checked,
-    &.indeterminate {
+    &.checked {
       div {
         background-color: var(--flag-color-grey-400);
       }
@@ -68,6 +71,7 @@
 
     &.indeterminate {
       div {
+        background-color: var(--flag-color-grey-400);
         border-color: var(--flag-color-grey-400);
       }
     }

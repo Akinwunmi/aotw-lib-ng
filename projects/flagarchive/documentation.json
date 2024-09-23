@@ -707,12 +707,12 @@
         },
         {
             "name": "FlagDropdownDirective",
-            "id": "directive-FlagDropdownDirective-0fb2998d369e09031c0d498d2888dcacf2cb07295a7d03884bf4a253959f733959f89c589e17da9ad572d752564cc350311067ed1d944ddca2e88ee89ea6c8d8",
+            "id": "directive-FlagDropdownDirective-8e486da03b0407185878dfbda8f6dd9944661223a3877d641a6cdc0a92725f846ace86a01bdd3d4e7339a78f362816be7f5d25314ad35734baad04af60975be8",
             "file": "projects/flagarchive/src/directives/dropdown.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { ConnectedPosition, Overlay, OverlayRef } from '@angular/cdk/overlay';\nimport { TemplatePortal } from '@angular/cdk/portal';\nimport {\n  DestroyRef,\n  Directive,\n  ElementRef,\n  HostListener,\n  inject,\n  input,\n  model,\n  OnDestroy,\n  TemplateRef,\n  ViewContainerRef\n} from '@angular/core';\nimport { takeUntilDestroyed } from '@angular/core/rxjs-interop';\nimport { EMPTY, merge, Observable } from 'rxjs';\n\n@Directive({\n  selector: '[flagDropdownTrigger]',\n  standalone: true\n})\nexport class FlagDropdownDirective implements OnDestroy {\n  public contentRef = input.required<TemplateRef<unknown>>({\n    alias: 'flagDropdownTrigger',\n  });\n\n  public isOpen = model(false);\n\n  @HostListener('click')\n  public handleClick(): void {\n    this.isOpen.set(!this.isOpen());\n    this.toggle();\n  }\n\n  private destroyRef = inject(DestroyRef);\n  private elementRef = inject(ElementRef<HTMLElement>);\n  private overlay = inject(Overlay);\n  private viewContainerRef = inject(ViewContainerRef);\n\n  private overlayRef?: OverlayRef;\n\n  public ngOnDestroy(): void {\n    this.isOpen.set(false);\n    this.overlayRef?.dispose();\n  }\n\n  private open(): void {\n    const xStart: Pick<ConnectedPosition, 'originX' | 'overlayX'> = {\n      originX: 'start',\n      overlayX: 'start',\n    };\n    const xEnd: Pick<ConnectedPosition, 'originX' | 'overlayX'> = {\n      originX: 'end',\n      overlayX: 'end',\n    };\n    const yTop: Pick<ConnectedPosition, 'originY' | 'overlayY'> = {\n      originY: 'top',\n      overlayY: 'bottom',\n    };\n    const yBottom: Pick<ConnectedPosition, 'originY' | 'overlayY'> = {\n      originY: 'bottom',\n      overlayY: 'top',\n    };\n    const positions: ConnectedPosition[] = [\n      { ...xStart, ...yBottom, offsetY: 4 },\n      { ...xEnd, ...yBottom, offsetY: 4 },\n      { ...xStart, ...yTop, offsetY: -4 },\n      { ...xEnd, ...yTop, offsetY: -4 },\n    ];\n    const templatePortal = new TemplatePortal(\n      this.contentRef(),\n      this.viewContainerRef\n    );\n\n    this.overlayRef = this.overlay.create({\n      hasBackdrop: true,\n      backdropClass: 'cdk-overlay-transparent-backdrop',\n      scrollStrategy: this.overlay.scrollStrategies.reposition(),\n      positionStrategy: this.overlay\n        .position()\n        .flexibleConnectedTo(this.elementRef)\n        .withPositions(positions)\n    });\n    this.overlayRef.attach(templatePortal);\n\n    this.actions().pipe(\n      takeUntilDestroyed(this.destroyRef)\n    ).subscribe(() => {\n      this.isOpen.set(false);\n      this.toggle();\n    });\n  }\n\n  private toggle() {\n    if (this.isOpen()) {\n      this.open();\n    } else {\n      this.close();\n    }\n  }\n\n  private actions(): Observable<MouseEvent | void> {\n    if (!this.overlayRef) {\n      return EMPTY;\n    }\n\n    const backdropClick$ = this.overlayRef.backdropClick();\n    const detachments$ = this.overlayRef.detachments();\n\n    return merge(backdropClick$, detachments$);\n  }\n\n  private close(): void {\n    this.isOpen.set(false);\n    this.overlayRef?.detach();\n  }\n}\n",
+            "sourceCode": "import { ConnectedPosition, Overlay, OverlayRef } from '@angular/cdk/overlay';\nimport { TemplatePortal } from '@angular/cdk/portal';\nimport {\n  DestroyRef,\n  Directive,\n  ElementRef,\n  HostListener,\n  inject,\n  input,\n  model,\n  OnDestroy,\n  TemplateRef,\n  ViewContainerRef,\n} from '@angular/core';\nimport { takeUntilDestroyed } from '@angular/core/rxjs-interop';\nimport { EMPTY, merge, Observable } from 'rxjs';\n\n@Directive({\n  selector: '[flagDropdownTrigger]',\n  standalone: true,\n})\nexport class FlagDropdownDirective implements OnDestroy {\n  contentRef = input.required<TemplateRef<unknown>>({\n    alias: 'flagDropdownTrigger',\n  });\n\n  isOpen = model(false);\n\n  @HostListener('click')\n  handleClick() {\n    this.isOpen.set(!this.isOpen());\n    this.#toggle();\n  }\n\n  #destroyRef = inject(DestroyRef);\n  #elementRef = inject(ElementRef<HTMLElement>);\n  #overlay = inject(Overlay);\n  #viewContainerRef = inject(ViewContainerRef);\n\n  #overlayRef?: OverlayRef;\n\n  ngOnDestroy() {\n    this.isOpen.set(false);\n    this.#overlayRef?.dispose();\n  }\n\n  close() {\n    this.isOpen.set(false);\n    this.#overlayRef?.detach();\n  }\n\n  open() {\n    const xStart: Pick<ConnectedPosition, 'originX' | 'overlayX'> = {\n      originX: 'start',\n      overlayX: 'start',\n    };\n    const xEnd: Pick<ConnectedPosition, 'originX' | 'overlayX'> = {\n      originX: 'end',\n      overlayX: 'end',\n    };\n    const yTop: Pick<ConnectedPosition, 'originY' | 'overlayY'> = {\n      originY: 'top',\n      overlayY: 'bottom',\n    };\n    const yBottom: Pick<ConnectedPosition, 'originY' | 'overlayY'> = {\n      originY: 'bottom',\n      overlayY: 'top',\n    };\n    const positions: ConnectedPosition[] = [\n      { ...xStart, ...yBottom, offsetY: 4 },\n      { ...xEnd, ...yBottom, offsetY: 4 },\n      { ...xStart, ...yTop, offsetY: -4 },\n      { ...xEnd, ...yTop, offsetY: -4 },\n    ];\n    const templatePortal = new TemplatePortal(this.contentRef(), this.#viewContainerRef);\n\n    this.#overlayRef = this.#overlay.create({\n      hasBackdrop: true,\n      backdropClass: 'cdk-overlay-transparent-backdrop',\n      scrollStrategy: this.#overlay.scrollStrategies.reposition(),\n      positionStrategy: this.#overlay\n        .position()\n        .flexibleConnectedTo(this.#elementRef)\n        .withPositions(positions),\n    });\n    this.#overlayRef.attach(templatePortal);\n\n    this.#actions()\n      .pipe(takeUntilDestroyed(this.#destroyRef))\n      .subscribe(() => {\n        this.isOpen.set(false);\n        this.#toggle();\n      });\n  }\n\n  #actions(): Observable<MouseEvent | void> {\n    if (!this.#overlayRef) {\n      return EMPTY;\n    }\n\n    const backdropClick$ = this.#overlayRef.backdropClick();\n    const detachments$ = this.#overlayRef.detachments();\n\n    return merge(backdropClick$, detachments$);\n  }\n\n  #toggle() {\n    if (this.isOpen()) {\n      this.open();\n    } else {\n      this.close();\n    }\n  }\n}\n",
             "selector": "[flagDropdownTrigger]",
             "providers": [],
             "hostDirectives": [],
@@ -727,9 +727,6 @@
                     "optional": false,
                     "description": "",
                     "line": 27,
-                    "modifierKind": [
-                        125
-                    ],
                     "required": false
                 }
             ],
@@ -749,20 +746,7 @@
             ],
             "propertiesClass": [
                 {
-                    "name": "contentRef",
-                    "defaultValue": "input.required<TemplateRef<unknown>>({\n    alias: 'flagDropdownTrigger',\n  })",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 23,
-                    "modifierKind": [
-                        125
-                    ]
-                },
-                {
-                    "name": "destroyRef",
+                    "name": "#destroyRef",
                     "defaultValue": "inject(DestroyRef)",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -775,7 +759,7 @@
                     ]
                 },
                 {
-                    "name": "elementRef",
+                    "name": "#elementRef",
                     "defaultValue": "inject(ElementRef<HTMLElement>)",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -788,21 +772,7 @@
                     ]
                 },
                 {
-                    "name": "isOpen",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 27,
-                    "modifierKind": [
-                        125
-                    ],
-                    "required": false
-                },
-                {
-                    "name": "overlay",
+                    "name": "#overlay",
                     "defaultValue": "inject(Overlay)",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -815,7 +785,7 @@
                     ]
                 },
                 {
-                    "name": "overlayRef",
+                    "name": "#overlayRef",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "OverlayRef",
@@ -827,7 +797,7 @@
                     ]
                 },
                 {
-                    "name": "viewContainerRef",
+                    "name": "#viewContainerRef",
                     "defaultValue": "inject(ViewContainerRef)",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -838,16 +808,50 @@
                     "modifierKind": [
                         123
                     ]
+                },
+                {
+                    "name": "contentRef",
+                    "defaultValue": "input.required<TemplateRef<unknown>>({\n    alias: 'flagDropdownTrigger',\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                },
+                {
+                    "name": "isOpen",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 27,
+                    "required": false
                 }
             ],
             "methodsClass": [
                 {
-                    "name": "actions",
+                    "name": "#actions",
                     "args": [],
                     "optional": false,
                     "returnType": "Observable<MouseEvent | void>",
                     "typeParameters": [],
-                    "line": 102,
+                    "line": 96,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "#toggle",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 107,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -860,12 +864,9 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 113,
+                    "line": 47,
                     "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        123
-                    ]
+                    "deprecationMessage": ""
                 },
                 {
                     "name": "handleClick",
@@ -883,8 +884,7 @@
                         }
                     ],
                     "modifierKind": [
-                        170,
-                        125
+                        170
                     ]
                 },
                 {
@@ -895,10 +895,7 @@
                     "typeParameters": [],
                     "line": 42,
                     "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        125
-                    ]
+                    "deprecationMessage": ""
                 },
                 {
                     "name": "open",
@@ -906,25 +903,9 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 47,
+                    "line": 52,
                     "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        123
-                    ]
-                },
-                {
-                    "name": "toggle",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 94,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        123
-                    ]
+                    "deprecationMessage": ""
                 }
             ],
             "extends": [],
@@ -1394,7 +1375,7 @@
                     "styleUrl": "../form-field/checkable-input.css"
                 },
                 {
-                    "data": ":host {\n  div {\n    border-radius: var(--flag-radius-sm);\n\n    flag-icon {\n      color: var(--flag-color-white);\n      font-size: var(--flag-font-size-md);\n      margin: calc(var(--flag-border-width-xs) * -1);\n      opacity: 0;\n      position: absolute;\n      transition: opacity var(--flag-animation-speed-default);\n    }\n  }\n  \n  &.checked,\n  &.indeterminate {\n    div {\n      background-color: var(--flag-color-primary);\n\n      flag-icon {\n        opacity: 1;\n      }\n    }\n  }\n\n  &.indeterminate {\n    div {\n      border-color: var(--flag-color-primary);\n    }\n  }\n\n  &:hover {\n    &.checked,\n    &.indeterminate {\n      div {\n        background-color: var(--flag-color-primary-700);\n      }\n    }\n\n    &.indeterminate {\n      div {\n        border-color: var(--flag-color-primary-700);\n      }\n    }\n  }\n\n  &:active {\n    &.indeterminate {\n      div {\n        border-color: var(--flag-color-primary-600);\n      }\n    }\n  }\n\n  &.disabled {\n    div {\n      flag-icon {\n        color: var(--flag-color-grey-200);\n      }\n    }\n\n    &.checked,\n    &.indeterminate {\n      div {\n        background-color: var(--flag-color-grey-400);\n      }\n    }\n\n    &.indeterminate {\n      div {\n        border-color: var(--flag-color-grey-400);\n      }\n    }\n  }\n}\n",
+                    "data": ":host {\n  div {\n    border-radius: var(--flag-radius-sm);\n\n    flag-icon {\n      color: var(--flag-color-white);\n      font-size: var(--flag-font-size-md);\n      margin: calc(var(--flag-border-width-xs) * -1);\n      opacity: 0;\n      position: absolute;\n      transition: opacity var(--flag-animation-speed-default);\n    }\n  }\n\n  &.checked {\n    div {\n      background-color: var(--flag-color-primary);\n  \n      flag-icon {\n        opacity: 1;\n      }\n    }\n  }\n  \n  &.indeterminate {\n    div {\n      background-color: var(--flag-color-primary);\n      border-color: var(--flag-color-primary);\n\n      flag-icon {\n        opacity: 1;\n      }\n    }\n  }\n  \n  &:hover {\n    &.checked {\n      div {\n        background-color: var(--flag-color-primary-700);\n      }\n    }\n    \n    &.indeterminate {\n      div {\n        background-color: var(--flag-color-primary-700);\n        border-color: var(--flag-color-primary-700);\n      }\n    }\n  }\n  \n  &:active {\n    &.indeterminate {\n      div {\n        border-color: var(--flag-color-primary-600);\n      }\n    }\n  }\n  \n  &.disabled {\n    div {\n      flag-icon {\n        color: var(--flag-color-grey-200);\n      }\n    }\n\n    &.checked {\n      div {\n        background-color: var(--flag-color-grey-400);\n      }\n    }\n\n    &.indeterminate {\n      div {\n        background-color: var(--flag-color-grey-400);\n        border-color: var(--flag-color-grey-400);\n      }\n    }\n  }\n}\n",
                     "styleUrl": "./checkbox.component.css"
                 }
             ],
