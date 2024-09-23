@@ -17,8 +17,8 @@ export default tseslint.config(
       '@angular-eslint/component-class-suffix': [
         'error',
         {
-          'suffixes': ['Component']
-        }
+          suffixes: ['Component'],
+        },
       ],
       '@angular-eslint/component-selector': [
         'error',
@@ -37,7 +37,7 @@ export default tseslint.config(
         },
       ],
       '@angular-eslint/prefer-on-push-component-change-detection': 'error',
-      "@angular-eslint/prefer-standalone": ["error"],
+      '@angular-eslint/prefer-standalone': ['error'],
       '@typescript-eslint/naming-convention': [
         'error',
         {
@@ -65,78 +65,72 @@ export default tseslint.config(
           format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
         },
       ],
-      '@typescript-eslint/no-explicit-any': 'error',    
+      '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/no-unused-vars': [
         'error',
         {
-          'argsIgnorePattern': '^_',
-          'ignoreRestSiblings': true,
+          argsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
         },
       ],
       '@typescript-eslint/no-use-before-define': [
         'warn',
         {
-          'functions': false,
-          'classes': false,
-          'variables': true,
+          functions: false,
+          classes: false,
+          variables: true,
         },
       ],
       'eol-last': ['error', 'always'],
-      'indent': [
+      indent: [
         'error',
         2,
         {
-          'SwitchCase': 1,
+          SwitchCase: 1,
         },
       ],
       'max-len': [
         'error',
         {
-          'code': 100,
+          code: 100,
         },
       ],
       'max-lines': [
         'error',
         {
-          'max': 200,
+          max: 200,
         },
       ],
       'no-multiple-empty-lines': 'error',
       'padding-line-between-statements': [
         'warn',
         {
-          'blankLine': 'always',
-          'prev': '*',
-          'next': 'class',
+          blankLine: 'always',
+          prev: '*',
+          next: 'class',
         },
         {
-          'blankLine': 'always',
-          'prev': '*',
-          'next': 'function',
+          blankLine: 'always',
+          prev: '*',
+          next: 'function',
         },
         {
-          'blankLine': 'always',
-          'prev': 'block-like',
-          'next': ['let', 'const'],
+          blankLine: 'always',
+          prev: 'block-like',
+          next: ['let', 'const'],
         },
       ],
-      'quotes': [
-        'error',
-        'single',
-      ],
-      'semi': ['error', 'always'],
+      quotes: ['error', 'single'],
+      semi: ['error', 'always'],
     },
   },
   {
     files: ['**/*.html'],
-    extends: [
-      ...angular.configs.templateRecommended,
-      ...angular.configs.templateAccessibility,
-    ],
+    extends: [...angular.configs.templateRecommended, ...angular.configs.templateAccessibility],
     rules: {
-      "@angular-eslint/template/prefer-control-flow": ["error"],
-      "@angular-eslint/template/prefer-ngsrc": ["error"],
-      "@angular-eslint/template/prefer-self-closing-tags": ["error"],
+      '@angular-eslint/template/prefer-control-flow': ['error'],
+      '@angular-eslint/template/prefer-ngsrc': ['error'],
+      '@angular-eslint/template/prefer-self-closing-tags': ['error'],
     },
   },
 );

@@ -6,6 +6,7 @@
     "dev": "ng run flagarchive:storybook",
     "build": "ng build flagarchive",
     "build:storybook": "ng run flagarchive:build-storybook",
+    "playground": "ng serve playground",
     "publish": "cd dist/flagarchive && npm publish --access=public",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
