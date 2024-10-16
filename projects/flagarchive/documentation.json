@@ -107,6 +107,30 @@
             "extends": []
         },
         {
+            "name": "CardArgs",
+            "id": "interface-CardArgs-af34eb2f6dca0f41387b0418eefdd6f6ef85dd6cd1b5e495efe834f5df623dc74fc339d837bb5731b5d9bc15834df573a4f36fbf2405a4b6407c7a819ac98748",
+            "file": "projects/flagarchive/src/storybook/components/card/card.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface CardArgs {\n  title?: string;\n}\n\nexport const style = `\n  p {\n    margin: 0;\n  }\n`;\n\nexport function setTemplate(args: CardArgs): string {\n  const header = `<flag-card-header>${args.title}</flag-card-header>`;\n  const content = `\n    <flag-card-content>\n      <p>Country in <strong>Africa</strong></p>\n    </flag-card-content>\n  `;\n  const footer = `\n    <flag-card-footer>\n      <button flagButton ghost>Delete</button>\n      <button flagButton>Edit</button>\n    </flag-card-footer>\n  `;\n\n  return `\n    <flag-card>\n      ${args.title && header}\n      ${content}\n      ${footer}\n    </flag-card>\n  `;\n}\n",
+            "properties": [
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
             "name": "FormFieldArgs",
             "id": "interface-FormFieldArgs-c20e491d96aec23b29cbf830a436f6441cc4aabdcb963c0dd8953edd3f06fca539fe21fd2eec9dbecc7256fc4cc60dce931fb873840bab376aed8359a20a3c04",
             "file": "projects/flagarchive/src/storybook/components/form-field/form-field.model.ts",
@@ -1072,6 +1096,123 @@
             "templateData": "<ng-content />\n"
         },
         {
+            "name": "FlagCardContentComponent",
+            "id": "component-FlagCardContentComponent-02c6dc40d1b4970f5f847ca050f7b3687fc8ef234df421e92cead82643490c7c2db6a7dba2ea052c4b210c70fd989d0bcaa2fe35a43b66de9d52e9417c9b88be",
+            "file": "projects/flagarchive/src/components/card/card-content/card-content.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "flag-card-content",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./card-content.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  selector: 'flag-card-content',\n  standalone: true,\n  styleUrl: './card-content.component.css',\n  templateUrl: './card-content.component.html',\n})\nexport class FlagCardContentComponent {}\n",
+            "styleUrl": "./card-content.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<ng-content />\n"
+        },
+        {
+            "name": "FlagCardFooterComponent",
+            "id": "component-FlagCardFooterComponent-66b92cd7ee302c9185f241f49e166ab3cb8e41f4700c454cece2aab129a2fbc0b2907cecd227658a2c0c18b9f588f0f94538780d367a492596d876df956f6835",
+            "file": "projects/flagarchive/src/components/card/card-footer/card-footer.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "flag-card-footer",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./card-footer.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  selector: 'flag-card-footer',\n  standalone: true,\n  styleUrl: './card-footer.component.css',\n  templateUrl: './card-footer.component.html',\n})\nexport class FlagCardFooterComponent {}\n",
+            "styleUrl": "./card-footer.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<ng-content />\n"
+        },
+        {
+            "name": "FlagCardHeaderComponent",
+            "id": "component-FlagCardHeaderComponent-dc7a629273216a7d5c849e47aaf1423e5bca5aaf1028d94b24e14dd3447cd833b3ada1ec7dcd952405c3ca35cdd03dc734e312e886c2b503f04ce913b957a825",
+            "file": "projects/flagarchive/src/components/card/card-header/card-header.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "flag-card-header",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./card-header.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  selector: 'flag-card-header',\n  standalone: true,\n  styleUrl: './card-header.component.css',\n  templateUrl: './card-header.component.html',\n})\nexport class FlagCardHeaderComponent {}\n",
+            "styleUrl": "./card-header.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<ng-content />\n"
+        },
+        {
             "name": "FlagCheckboxComponent",
             "id": "component-FlagCheckboxComponent-57c9463ae025603e0d43fbd43ee27303926bd0c37b81f0ff6620901268b82d23bb7adea55b968e5b8d261a6a0c4f5ccc67e2b2ddc2e73e279ec7a34f27cb179b",
             "file": "projects/flagarchive/src/components/checkbox/checkbox.component.ts",
@@ -1453,6 +1594,290 @@
             "stylesData": "",
             "extends": [],
             "templateData": "<ng-content />\n"
+        },
+        {
+            "name": "FlagDialogComponent",
+            "id": "component-FlagDialogComponent-9dfb7b734c4cdf3bfb69e66d93e87bbc7c5f3ad3570ac3c00e498d417da340cb16582b0c6f03222e8abef57ef474687d8636fa8c2187ea74de520611bc83c6e5",
+            "file": "projects/flagarchive/src/components/dialog/dialog.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "flag-dialog",
+            "styleUrls": [
+                "../card/card.component.css",
+                "./dialog.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "../card/card.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "large",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "required": false
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "large",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "required": false
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [
+                {
+                    "name": "class.large",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, HostBinding, input } from '@angular/core';\n\nimport { FlagCardComponent } from '../card';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  imports: [],\n  selector: 'flag-dialog',\n  standalone: true,\n  styleUrls: ['../card/card.component.css', './dialog.component.css'],\n  templateUrl: '../card/card.component.html',\n})\nexport class FlagDialogComponent extends FlagCardComponent {\n  large = input(false);\n\n  @HostBinding('class.large')\n  get largeClass(): boolean {\n    return this.large();\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  background-color: var(--flag-color-grey-200);\n  border-radius: var(--flag-radius-lg);\n  box-shadow: var(--flag-elevation-xs);\n  color: var(--flag-color-primary);\n  display: block;\n  font-family: var(--flag-font-family-primary);\n  min-width: 12rem;\n  overflow: hidden;\n}\n",
+                    "styleUrl": "../card/card.component.css"
+                },
+                {
+                    "data": ":host {\n  --flag-dialog-height: calc(100vh - var(--flag-space-md));\n  --flag-dialog-width: calc(100vw - var(--flag-space-md));\n\n  max-height: var(--flag-dialog-height);\n  max-width: var(--flag-dialog-width);\n  width: 32rem;\n\n  &.large {\n    width: 64rem;\n  }\n\n  @media screen and (max-width: 64rem) {\n    height: var(--flag-dialog-height);\n    width: var(--flag-dialog-width);\n  }\n}\n",
+                    "styleUrl": "./dialog.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [
+                "FlagCardComponent"
+            ],
+            "accessors": {
+                "largeClass": {
+                    "name": "largeClass",
+                    "getSignature": {
+                        "name": "largeClass",
+                        "type": "boolean",
+                        "returnType": "boolean",
+                        "line": 17
+                    }
+                }
+            },
+            "templateData": "<ng-content />\n"
+        },
+        {
+            "name": "FlagDialogContentComponent",
+            "id": "component-FlagDialogContentComponent-a7fa0e1672d093bdb3edc7beb5970215bb124a2a8b394ce7f977cc9665895838b461fd7c287ddf134d8851e35db2fe190823add20470203a9a1ebe4a6227f366",
+            "file": "projects/flagarchive/src/components/dialog/dialog-content/dialog-content.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "flag-dialog-content",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "../../card/card-content/card-content.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "FlagButtonDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "FlagIconComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\n\nimport { FlagButtonDirective } from '../../../directives';\nimport { FlagIconComponent } from '../../icon';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  imports: [FlagButtonDirective, FlagIconComponent],\n  selector: 'flag-dialog-content',\n  standalone: true,\n  styleUrl: '../../card/card-content/card-content.component.css',\n  templateUrl: '../../card/card-content/card-content.component.html',\n})\nexport class FlagDialogContentComponent {}\n",
+            "styleUrl": "../../card/card-content/card-content.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<ng-content />\n"
+        },
+        {
+            "name": "FlagDialogFooterComponent",
+            "id": "component-FlagDialogFooterComponent-51c29bcea58289366d940b347e144ccec546d30b5fe15e6d1dc04804987da57e6ffa78de98fe7ce43fe5fb9b5e19ff807604e5877cf599b781f3ed589762526f",
+            "file": "projects/flagarchive/src/components/dialog/dialog-footer/dialog-footer.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "flag-dialog-footer",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "../../card/card-footer/card-footer.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "FlagButtonDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "FlagIconComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\n\nimport { FlagButtonDirective } from '../../../directives';\nimport { FlagIconComponent } from '../../icon';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  imports: [FlagButtonDirective, FlagIconComponent],\n  selector: 'flag-dialog-footer',\n  standalone: true,\n  styleUrl: '../../card/card-footer/card-footer.component.css',\n  templateUrl: '../../card/card-footer/card-footer.component.html',\n})\nexport class FlagDialogFooterComponent {}\n",
+            "styleUrl": "../../card/card-footer/card-footer.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<ng-content />\n"
+        },
+        {
+            "name": "FlagDialogHeaderComponent",
+            "id": "component-FlagDialogHeaderComponent-cb218dcffb992d6946cd4cdc20a77964025e50a1dba1a0a4f848ee14afce8994a0e5e657e4d8db6265186de3669402e9acf45f65efd6394b11f02f0ecaffe44b",
+            "file": "projects/flagarchive/src/components/dialog/dialog-header/dialog-header.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "flag-dialog-header",
+            "styleUrls": [
+                "../../card/card-header/card-header.component.css",
+                "./dialog-header.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./dialog-header.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "close",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "required": false
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "close",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "required": false
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onClose",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "FlagButtonDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "FlagIconComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, output } from '@angular/core';\n\nimport { FlagButtonDirective } from '../../../directives';\nimport { FlagIconComponent } from '../../icon';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  imports: [FlagButtonDirective, FlagIconComponent],\n  selector: 'flag-dialog-header',\n  standalone: true,\n  styleUrls: ['../../card/card-header/card-header.component.css', './dialog-header.component.css'],\n  templateUrl: './dialog-header.component.html',\n})\nexport class FlagDialogHeaderComponent {\n  close = output();\n\n  onClose(): void {\n    this.close.emit();\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  display: grid;\n  font-size: var(--flag-font-size-md);\n  font-weight: var(--flag-font-weight-bold);\n  padding: var(--flag-space-lg);\n}\n",
+                    "styleUrl": "../../card/card-header/card-header.component.css"
+                },
+                {
+                    "data": ":host {\n  align-items: center;\n  display: grid;\n  font-size: var(--flag-font-size-md);\n  font-weight: var(--flag-font-weight-bold);\n  grid-template-columns: 1fr auto;\n  padding: var(--flag-space-lg);\n}\n",
+                    "styleUrl": "./dialog-header.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<ng-content />\n<button flagButton (click)=\"onClose()\">\n  <flag-icon>close</flag-icon>\n</button>\n"
         },
         {
             "name": "FlagFormFieldComponent",
@@ -3287,6 +3712,16 @@
                 "name": "args",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/flagarchive/src/storybook/components/card/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "CardArgs",
+                "defaultValue": "{\n  title: 'Comoros',\n}"
+            },
+            {
+                "name": "args",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/flagarchive/src/storybook/components/form-field/checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3388,6 +3823,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/flagarchive/src/storybook/components/year-picker.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{ args }"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/flagarchive/src/storybook/components/card/card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -3537,6 +3982,16 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/flagarchive/src/storybook/components/card/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<CardArgs>",
+                "defaultValue": "{\n  title: 'Components/Card',\n  component: FlagCardComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [\n        FlagCardComponent,\n        FlagCardContentComponent,\n        FlagCardFooterComponent,\n        FlagCardHeaderComponent,\n      ],\n    }),\n  ],\n  render: args => ({\n    props: args,\n    styles: [style],\n    template: setTemplate(args),\n  }),\n  argTypes: {},\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/flagarchive/src/storybook/components/form-field/checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3612,6 +4067,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: { ...args, loading: false },\n}"
+            },
+            {
+                "name": "style",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/flagarchive/src/storybook/components/card/card.model.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\n  p {\n    margin: 0;\n  }\n`"
             },
             {
                 "name": "WithAffixes",
@@ -3750,6 +4215,35 @@
                     {
                         "name": "props",
                         "type": "RadioButtonArgs",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "setTemplate",
+                "file": "projects/flagarchive/src/storybook/components/card/card.model.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "args",
+                        "type": "CardArgs",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "returnType": "string",
+                "jsdoctags": [
+                    {
+                        "name": "args",
+                        "type": "CardArgs",
                         "deprecated": false,
                         "deprecationMessage": "",
                         "tagName": {
@@ -3909,6 +4403,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<StoryArgs>",
                 "file": "projects/flagarchive/src/storybook/core/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<CardArgs>",
+                "file": "projects/flagarchive/src/storybook/components/card/card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -4331,6 +4836,38 @@
                     "defaultValue": "{\n  args,\n}"
                 }
             ],
+            "projects/flagarchive/src/storybook/components/card/card.stories.ts": [
+                {
+                    "name": "args",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/flagarchive/src/storybook/components/card/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "CardArgs",
+                    "defaultValue": "{\n  title: 'Comoros',\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/flagarchive/src/storybook/components/card/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{ args }"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/flagarchive/src/storybook/components/card/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<CardArgs>",
+                    "defaultValue": "{\n  title: 'Components/Card',\n  component: FlagCardComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [\n        FlagCardComponent,\n        FlagCardContentComponent,\n        FlagCardFooterComponent,\n        FlagCardHeaderComponent,\n      ],\n    }),\n  ],\n  render: args => ({\n    props: args,\n    styles: [style],\n    template: setTemplate(args),\n  }),\n  argTypes: {},\n}"
+                }
+            ],
             "projects/flagarchive/src/storybook/components/form-field/checkbox.stories.ts": [
                 {
                     "name": "args",
@@ -4472,6 +5009,18 @@
                     "type": "Preview",
                     "defaultValue": "{\n  parameters: {\n    backgrounds: {\n      default: 'light',\n      values: [\n        {\n          name: 'light',\n          value: 'var(--flag-color-grey-200)'\n        },\n        {\n          name: 'primary',\n          value: 'var(--flag-color-primary-500)'\n        },\n        {\n          name: 'dark',\n          value: 'var(--flag-color-grey-700)'\n        }\n      ]\n    },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
                 }
+            ],
+            "projects/flagarchive/src/storybook/components/card/card.model.ts": [
+                {
+                    "name": "style",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/flagarchive/src/storybook/components/card/card.model.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\n  p {\n    margin: 0;\n  }\n`"
+                }
             ]
         },
         "groupedFunctions": {
@@ -4607,6 +5156,37 @@
                         {
                             "name": "props",
                             "type": "RadioButtonArgs",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "projects/flagarchive/src/storybook/components/card/card.model.ts": [
+                {
+                    "name": "setTemplate",
+                    "file": "projects/flagarchive/src/storybook/components/card/card.model.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "args",
+                            "type": "CardArgs",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "returnType": "string",
+                    "jsdoctags": [
+                        {
+                            "name": "args",
+                            "type": "CardArgs",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
@@ -4896,6 +5476,19 @@
                     "description": "",
                     "kind": 183
                 }
+            ],
+            "projects/flagarchive/src/storybook/components/card/card.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<CardArgs>",
+                    "file": "projects/flagarchive/src/storybook/components/card/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
             ]
         }
     },
@@ -4933,6 +5526,33 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/flagarchive/src/components/card/card-content/card-content.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FlagCardContentComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/flagarchive/src/components/card/card-footer/card-footer.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FlagCardFooterComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/flagarchive/src/components/card/card-header/card-header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FlagCardHeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/flagarchive/src/components/card/card.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -4957,6 +5577,42 @@
                 "name": "FlagCheckboxComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/18",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/flagarchive/src/components/dialog/dialog-content/dialog-content.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FlagDialogContentComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/flagarchive/src/components/dialog/dialog-footer/dialog-footer.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FlagDialogFooterComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/flagarchive/src/components/dialog/dialog-header/dialog-header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FlagDialogHeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/flagarchive/src/components/dialog/dialog.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FlagDialogComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -5143,6 +5799,65 @@
             },
             {
                 "filePath": "projects/flagarchive/src/storybook/components/breadcrumb.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/flagarchive/src/storybook/components/card/card.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "CardArgs",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/flagarchive/src/storybook/components/card/card.model.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "setTemplate",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/flagarchive/src/storybook/components/card/card.model.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "style",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/flagarchive/src/storybook/components/card/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "args",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/flagarchive/src/storybook/components/card/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/flagarchive/src/storybook/components/card/card.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

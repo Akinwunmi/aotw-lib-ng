@@ -1,6 +1,6 @@
 <header>
   <div>
-    <img ngSrc="images/logo.svg" alt="Flag Archive Logo" />
+    <img ngSrc="/images/logo.svg" alt="Flag Archive Logo" width="24" height="24" />
     Flag Archive
     <flag-pill [type]="pillType.Warning">Playground</flag-pill>
   </div>
@@ -9,7 +9,14 @@
   </button>
 </header>
 <main>
-  <flag-checkbox [checked]="isMenuOpen" (click)="toggleMenu()">Menu is open</flag-checkbox>
+  <flag-form-field>
+    <flag-checkbox [checked]="isMenuOpen" (click)="toggleMenu()">
+      Menu is open
+    </flag-checkbox>
+  </flag-form-field>
+  <button flagButton (click)="openDialog()">
+    Open dialog
+  </button>
 </main>
 
 <ng-template #dropdown>
@@ -23,4 +30,20 @@
       Log out
     </flag-list-item>
   </flag-card>
+</ng-template>
+
+<ng-template #dialog>
+  <flag-dialog [large]="true">
+    <flag-dialog-header (close)="closeDialog()">
+      Test dialog
+    </flag-dialog-header>
+    <flag-dialog-content>
+      This is a test dialog.
+    </flag-dialog-content>
+    <flag-dialog-footer>
+      <button flagButton (click)="closeDialog()">
+        Annuleren
+      </button>
+    </flag-dialog-footer>
+  </flag-dialog>  
 </ng-template>

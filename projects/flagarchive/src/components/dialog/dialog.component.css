@@ -1,0 +1,17 @@
+:host {
+  --flag-dialog-height: calc(100vh - var(--flag-space-md));
+  --flag-dialog-width: calc(100vw - var(--flag-space-md));
+
+  max-height: var(--flag-dialog-height);
+  max-width: var(--flag-dialog-width);
+  width: 32rem;
+
+  &.large {
+    width: 64rem;
+  }
+
+  @media screen and (max-width: 64rem) {
+    height: var(--flag-dialog-height);
+    width: var(--flag-dialog-width);
+  }
+}
