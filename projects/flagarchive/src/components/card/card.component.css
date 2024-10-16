@@ -1,7 +1,11 @@
 :host {
+  background-color: var(--flag-color-grey-200);
   border-radius: var(--flag-radius-lg);
   box-shadow: var(--flag-elevation-xs);
-  display: block;
+  color: var(--flag-color-primary);
+  display: grid;
+  font-family: var(--flag-font-family-primary);
+  grid-template-rows: auto 1fr auto;
   min-width: 12rem;
   overflow: hidden;
 }

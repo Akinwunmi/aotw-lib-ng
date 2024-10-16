@@ -22,5 +22,7 @@ header {
 }
 
 main {
+  display: flex;
+  gap: var(--flag-space-lg);
   padding: var(--flag-space-lg);
 }

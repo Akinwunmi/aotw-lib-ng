@@ -2,6 +2,7 @@ export * from './breadcrumb';
 export * from './card';
 export * from './checkbox';
 export * from './checkbox-group';
+export * from './dialog';
 export * from './form-field';
 export * from './icon';
 export * from './list-item';
