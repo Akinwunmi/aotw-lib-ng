@@ -18,7 +18,7 @@ const meta: Meta<SkeletonArgs> = {
       imports: [FlagSkeletonComponent],
     }),
   ],
-  render: (args) => ({
+  render: args => ({
     props: args,
     template: `
       <flag-skeleton

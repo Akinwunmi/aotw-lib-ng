@@ -8,7 +8,6 @@ import { BreadcrumbItem } from './breadcrumb.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [FlagIconComponent],
   selector: 'flag-breadcrumb',
-  standalone: true,
   styleUrl: './breadcrumb.component.css',
   templateUrl: './breadcrumb.component.html',
 })

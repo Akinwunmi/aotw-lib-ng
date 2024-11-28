@@ -7,7 +7,6 @@ import { FlagTabComponent, Tab } from '../tab';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [FlagTabComponent, NgStyle],
   selector: 'flag-tab-group',
-  standalone: true,
   styleUrl: './tab-group.component.css',
   templateUrl: './tab-group.component.html',
 })

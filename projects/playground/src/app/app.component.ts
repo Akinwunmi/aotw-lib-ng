@@ -13,6 +13,7 @@ import {
   FlagDialogHeaderComponent,
   FlagPillComponent,
   PillType,
+  FlagYearPickerComponent,
 } from 'projects/flagarchive/src/components';
 import { FlagButtonDirective, FlagDropdownDirective } from 'projects/flagarchive/src/directives';
 
@@ -31,10 +32,10 @@ import { FlagButtonDirective, FlagDropdownDirective } from 'projects/flagarchive
     FlagDialogFooterComponent,
     FlagDialogHeaderComponent,
     FlagPillComponent,
+    FlagYearPickerComponent,
     NgOptimizedImage,
   ],
   selector: 'app-root',
-  standalone: true,
   styleUrl: './app.component.css',
   templateUrl: './app.component.html',
 })

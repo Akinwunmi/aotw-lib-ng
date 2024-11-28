@@ -941,7 +941,7 @@
     "components": [
         {
             "name": "FlagBreadcrumbComponent",
-            "id": "component-FlagBreadcrumbComponent-20473c0c8612bb6a9883aa7d61e51595733a3fba2af99f84b7684fccc31b98b7a9a7016a387d9293668532ed4f78e21fcceda19c22094fcfd78397ccf9ee46a4",
+            "id": "component-FlagBreadcrumbComponent-d21431eab67582dad63fa050b2dc94cbb233eed5146519ebf6e8d7d22d65c111411de3894409ef666387c280f4f8e243d084d5665d4de0eb16ff53018ee723da",
             "file": "projects/flagarchive/src/components/breadcrumb/breadcrumb.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -966,7 +966,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 18,
+                    "line": 17,
                     "modifierKind": [
                         125
                     ],
@@ -982,7 +982,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 16,
+                    "line": 15,
                     "modifierKind": [
                         125
                     ]
@@ -994,7 +994,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 18,
+                    "line": 17,
                     "modifierKind": [
                         125
                     ],
@@ -1015,7 +1015,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 20,
+                    "line": 19,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1038,7 +1038,7 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": true,
+            "standalone": false,
             "imports": [
                 {
                     "name": "FlagIconComponent",
@@ -1048,7 +1048,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';\n\nimport { FlagIconComponent } from '../icon';\n\nimport { BreadcrumbItem } from './breadcrumb.model';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  imports: [FlagIconComponent],\n  selector: 'flag-breadcrumb',\n  standalone: true,\n  styleUrl: './breadcrumb.component.css',\n  templateUrl: './breadcrumb.component.html',\n})\nexport class FlagBreadcrumbComponent {\n  public items = input.required<BreadcrumbItem[]>();\n\n  public selectedItem = output<BreadcrumbItem>();\n\n  public selectItem(item: BreadcrumbItem): void {\n    this.selectedItem.emit(item);\n  }\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';\n\nimport { FlagIconComponent } from '../icon';\n\nimport { BreadcrumbItem } from './breadcrumb.model';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  imports: [FlagIconComponent],\n  selector: 'flag-breadcrumb',\n  styleUrl: './breadcrumb.component.css',\n  templateUrl: './breadcrumb.component.html',\n})\nexport class FlagBreadcrumbComponent {\n  public items = input.required<BreadcrumbItem[]>();\n\n  public selectedItem = output<BreadcrumbItem>();\n\n  public selectItem(item: BreadcrumbItem): void {\n    this.selectedItem.emit(item);\n  }\n}\n",
             "styleUrl": "./breadcrumb.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1214,7 +1214,7 @@
         },
         {
             "name": "FlagCheckboxComponent",
-            "id": "component-FlagCheckboxComponent-57c9463ae025603e0d43fbd43ee27303926bd0c37b81f0ff6620901268b82d23bb7adea55b968e5b8d261a6a0c4f5ccc67e2b2ddc2e73e279ec7a34f27cb179b",
+            "id": "component-FlagCheckboxComponent-decf3385808b8a5a65e8660a8750c7fbc4cea92c65eb6131c8a45c0d0729d53c91ba427327dc515fc6564c69591958c049288cb4e2500eac1b13960c47e7b051",
             "file": "projects/flagarchive/src/components/checkbox/checkbox.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1247,7 +1247,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 28,
+                    "line": 27,
                     "required": false
                 },
                 {
@@ -1258,7 +1258,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 29,
+                    "line": 28,
                     "required": false
                 },
                 {
@@ -1269,7 +1269,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 30,
+                    "line": 29,
                     "required": false
                 }
             ],
@@ -1283,7 +1283,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 28,
+                    "line": 27,
                     "required": false
                 },
                 {
@@ -1294,7 +1294,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 29,
+                    "line": 28,
                     "required": false
                 },
                 {
@@ -1305,7 +1305,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 30,
+                    "line": 29,
                     "required": false
                 },
                 {
@@ -1316,7 +1316,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 31
+                    "line": 30
                 },
                 {
                     "name": "uuid",
@@ -1326,7 +1326,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 33
+                    "line": 32
                 }
             ],
             "methodsClass": [
@@ -1336,7 +1336,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 51,
+                    "line": 50,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "decorators": [
@@ -1370,7 +1370,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 58,
+                    "line": 57,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -1399,7 +1399,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 62,
+                    "line": 61,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1416,7 +1416,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 66,
+                    "line": 65,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -1444,7 +1444,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 70,
+                    "line": 69,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -1467,7 +1467,7 @@
                     "name": "class.checked",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 36,
+                    "line": 35,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -1475,7 +1475,7 @@
                     "name": "class.disabled",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 41,
+                    "line": 40,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -1483,7 +1483,7 @@
                     "name": "class.indeterminate",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 46,
+                    "line": 45,
                     "type": "boolean",
                     "decorators": []
                 }
@@ -1495,10 +1495,10 @@
                     "argsDecorator": [],
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 51
+                    "line": 50
                 }
             ],
-            "standalone": true,
+            "standalone": false,
             "imports": [
                 {
                     "name": "FlagIconComponent",
@@ -1508,7 +1508,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  HostBinding,\n  HostListener,\n  model,\n} from '@angular/core';\nimport { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';\n\nimport { FlagIconComponent } from '../icon';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  imports: [FlagIconComponent],\n  providers: [\n    {\n      multi: true,\n      provide: NG_VALUE_ACCESSOR,\n      useExisting: FlagCheckboxComponent,\n    },\n  ],\n  selector: 'flag-checkbox',\n  standalone: true,\n  styleUrls: ['../form-field/checkable-input.css', './checkbox.component.css'],\n  templateUrl: './checkbox.component.html',\n})\nexport class FlagCheckboxComponent implements ControlValueAccessor {\n  checked = model(false);\n  disabled = model(false);\n  indeterminate = model(false);\n  name = model('');\n\n  uuid = crypto.randomUUID();\n\n  @HostBinding('class.checked')\n  get checkedClass(): boolean {\n    return this.checked();\n  }\n\n  @HostBinding('class.disabled')\n  get disabledClass(): boolean {\n    return this.disabled();\n  }\n\n  @HostBinding('class.indeterminate')\n  get indeterminateClass(): boolean {\n    return this.indeterminate();\n  }\n\n  @HostListener('click')\n  onClick() {\n    if (!this.checked()) {\n      this.indeterminate.set(false);\n    }\n    this.checked.set(!this.checked());\n  }\n\n  registerOnChange(fn: (value: boolean) => void) {\n    this.checked.subscribe(fn);\n  }\n\n  registerOnTouched() {\n    // noop\n  }\n\n  setDisabledState(disabled: boolean) {\n    this.disabled.set(disabled);\n  }\n\n  writeValue(value: boolean) {\n    this.checked.set(value);\n  }\n}\n",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  HostBinding,\n  HostListener,\n  model,\n} from '@angular/core';\nimport { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';\n\nimport { FlagIconComponent } from '../icon';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  imports: [FlagIconComponent],\n  providers: [\n    {\n      multi: true,\n      provide: NG_VALUE_ACCESSOR,\n      useExisting: FlagCheckboxComponent,\n    },\n  ],\n  selector: 'flag-checkbox',\n  styleUrls: ['../form-field/checkable-input.css', './checkbox.component.css'],\n  templateUrl: './checkbox.component.html',\n})\nexport class FlagCheckboxComponent implements ControlValueAccessor {\n  checked = model(false);\n  disabled = model(false);\n  indeterminate = model(false);\n  name = model('');\n\n  uuid = crypto.randomUUID();\n\n  @HostBinding('class.checked')\n  get checkedClass(): boolean {\n    return this.checked();\n  }\n\n  @HostBinding('class.disabled')\n  get disabledClass(): boolean {\n    return this.disabled();\n  }\n\n  @HostBinding('class.indeterminate')\n  get indeterminateClass(): boolean {\n    return this.indeterminate();\n  }\n\n  @HostListener('click')\n  onClick() {\n    if (!this.checked()) {\n      this.indeterminate.set(false);\n    }\n    this.checked.set(!this.checked());\n  }\n\n  registerOnChange(fn: (value: boolean) => void) {\n    this.checked.subscribe(fn);\n  }\n\n  registerOnTouched() {\n    // noop\n  }\n\n  setDisabledState(disabled: boolean) {\n    this.disabled.set(disabled);\n  }\n\n  writeValue(value: boolean) {\n    this.checked.set(value);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1532,7 +1532,7 @@
                         "name": "checkedClass",
                         "type": "boolean",
                         "returnType": "boolean",
-                        "line": 36
+                        "line": 35
                     }
                 },
                 "disabledClass": {
@@ -1541,7 +1541,7 @@
                         "name": "disabledClass",
                         "type": "boolean",
                         "returnType": "boolean",
-                        "line": 41
+                        "line": 40
                     }
                 },
                 "indeterminateClass": {
@@ -1550,7 +1550,7 @@
                         "name": "indeterminateClass",
                         "type": "boolean",
                         "returnType": "boolean",
-                        "line": 46
+                        "line": 45
                     }
                 }
             },
@@ -1597,7 +1597,7 @@
         },
         {
             "name": "FlagDialogComponent",
-            "id": "component-FlagDialogComponent-9dfb7b734c4cdf3bfb69e66d93e87bbc7c5f3ad3570ac3c00e498d417da340cb16582b0c6f03222e8abef57ef474687d8636fa8c2187ea74de520611bc83c6e5",
+            "id": "component-FlagDialogComponent-254e957d1b5279451479197f3969e04b29d2d1f08425fe5c72e9adfdb566a91ea51e2dd43b8ca0ebe47a1251df224d3e4bd0838c20e465058ca502742a0c89ff",
             "file": "projects/flagarchive/src/components/dialog/dialog.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1625,7 +1625,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 14,
+                    "line": 12,
                     "required": false
                 }
             ],
@@ -1639,7 +1639,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 14,
+                    "line": 12,
                     "required": false
                 }
             ],
@@ -1651,22 +1651,22 @@
                     "name": "class.large",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 15,
                     "type": "boolean",
                     "decorators": []
                 }
             ],
             "hostListeners": [],
-            "standalone": true,
+            "standalone": false,
             "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, HostBinding, input } from '@angular/core';\n\nimport { FlagCardComponent } from '../card';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  imports: [],\n  selector: 'flag-dialog',\n  standalone: true,\n  styleUrls: ['../card/card.component.css', './dialog.component.css'],\n  templateUrl: '../card/card.component.html',\n})\nexport class FlagDialogComponent extends FlagCardComponent {\n  large = input(false);\n\n  @HostBinding('class.large')\n  get largeClass(): boolean {\n    return this.large();\n  }\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, HostBinding, input } from '@angular/core';\n\nimport { FlagCardComponent } from '../card';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  selector: 'flag-dialog',\n  styleUrls: ['../card/card.component.css', './dialog.component.css'],\n  templateUrl: '../card/card.component.html',\n})\nexport class FlagDialogComponent extends FlagCardComponent {\n  large = input(false);\n\n  @HostBinding('class.large')\n  get largeClass(): boolean {\n    return this.large();\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\n  background-color: var(--flag-color-grey-200);\n  border-radius: var(--flag-radius-lg);\n  box-shadow: var(--flag-elevation-xs);\n  color: var(--flag-color-primary);\n  display: block;\n  font-family: var(--flag-font-family-primary);\n  min-width: 12rem;\n  overflow: hidden;\n}\n",
+                    "data": ":host {\n  background-color: var(--flag-color-grey-200);\n  border-radius: var(--flag-radius-lg);\n  box-shadow: var(--flag-elevation-xs);\n  color: var(--flag-color-primary);\n  display: grid;\n  font-family: var(--flag-font-family-primary);\n  grid-template-rows: auto 1fr auto;\n  min-width: 12rem;\n  overflow: hidden;\n}\n",
                     "styleUrl": "../card/card.component.css"
                 },
                 {
@@ -1685,7 +1685,7 @@
                         "name": "largeClass",
                         "type": "boolean",
                         "returnType": "boolean",
-                        "line": 17
+                        "line": 15
                     }
                 }
             },
@@ -1693,7 +1693,7 @@
         },
         {
             "name": "FlagDialogContentComponent",
-            "id": "component-FlagDialogContentComponent-a7fa0e1672d093bdb3edc7beb5970215bb124a2a8b394ce7f977cc9665895838b461fd7c287ddf134d8851e35db2fe190823add20470203a9a1ebe4a6227f366",
+            "id": "component-FlagDialogContentComponent-518bd8063b00c41f716e785bac3642e3ed982c36fb61c92885973fa375fb7313dca744177e640b799753181260b7b0f662ea0e50082cf9c0ef12ebdb1b13ff7b",
             "file": "projects/flagarchive/src/components/dialog/dialog-content/dialog-content.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1717,21 +1717,12 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": true,
-            "imports": [
-                {
-                    "name": "FlagButtonDirective",
-                    "type": "directive"
-                },
-                {
-                    "name": "FlagIconComponent",
-                    "type": "component"
-                }
-            ],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\n\nimport { FlagButtonDirective } from '../../../directives';\nimport { FlagIconComponent } from '../../icon';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  imports: [FlagButtonDirective, FlagIconComponent],\n  selector: 'flag-dialog-content',\n  standalone: true,\n  styleUrl: '../../card/card-content/card-content.component.css',\n  templateUrl: '../../card/card-content/card-content.component.html',\n})\nexport class FlagDialogContentComponent {}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  selector: 'flag-dialog-content',\n  styleUrl: '../../card/card-content/card-content.component.css',\n  templateUrl: '../../card/card-content/card-content.component.html',\n})\nexport class FlagDialogContentComponent {}\n",
             "styleUrl": "../../card/card-content/card-content.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1741,7 +1732,7 @@
         },
         {
             "name": "FlagDialogFooterComponent",
-            "id": "component-FlagDialogFooterComponent-51c29bcea58289366d940b347e144ccec546d30b5fe15e6d1dc04804987da57e6ffa78de98fe7ce43fe5fb9b5e19ff807604e5877cf599b781f3ed589762526f",
+            "id": "component-FlagDialogFooterComponent-636559fd4a89557447ee72fe0c7076296651f2d0d328bf08b6c8f97f7fa1d12da881e6db045f55b138c97c0845dd8a6e64d89b685dbcd872219b74f073552c93",
             "file": "projects/flagarchive/src/components/dialog/dialog-footer/dialog-footer.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1765,21 +1756,12 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": true,
-            "imports": [
-                {
-                    "name": "FlagButtonDirective",
-                    "type": "directive"
-                },
-                {
-                    "name": "FlagIconComponent",
-                    "type": "component"
-                }
-            ],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\n\nimport { FlagButtonDirective } from '../../../directives';\nimport { FlagIconComponent } from '../../icon';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  imports: [FlagButtonDirective, FlagIconComponent],\n  selector: 'flag-dialog-footer',\n  standalone: true,\n  styleUrl: '../../card/card-footer/card-footer.component.css',\n  templateUrl: '../../card/card-footer/card-footer.component.html',\n})\nexport class FlagDialogFooterComponent {}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  selector: 'flag-dialog-footer',\n  styleUrl: '../../card/card-footer/card-footer.component.css',\n  templateUrl: '../../card/card-footer/card-footer.component.html',\n})\nexport class FlagDialogFooterComponent {}\n",
             "styleUrl": "../../card/card-footer/card-footer.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1789,7 +1771,7 @@
         },
         {
             "name": "FlagDialogHeaderComponent",
-            "id": "component-FlagDialogHeaderComponent-cb218dcffb992d6946cd4cdc20a77964025e50a1dba1a0a4f848ee14afce8994a0e5e657e4d8db6265186de3669402e9acf45f65efd6394b11f02f0ecaffe44b",
+            "id": "component-FlagDialogHeaderComponent-94f60e24e2f14a33938c9cb75be046b1472123b3dc5e00c3b85f71199c40b032c1ac3d447a1a63b270257ffafc357581d476f577f563d4754985ef70ebce1d99",
             "file": "projects/flagarchive/src/components/dialog/dialog-header/dialog-header.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1817,7 +1799,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 15,
+                    "line": 14,
                     "required": false
                 }
             ],
@@ -1829,7 +1811,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 15,
+                    "line": 14,
                     "required": false
                 }
             ],
@@ -1840,7 +1822,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 17,
+                    "line": 16,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1849,7 +1831,7 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": true,
+            "standalone": false,
             "imports": [
                 {
                     "name": "FlagButtonDirective",
@@ -1863,7 +1845,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, output } from '@angular/core';\n\nimport { FlagButtonDirective } from '../../../directives';\nimport { FlagIconComponent } from '../../icon';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  imports: [FlagButtonDirective, FlagIconComponent],\n  selector: 'flag-dialog-header',\n  standalone: true,\n  styleUrls: ['../../card/card-header/card-header.component.css', './dialog-header.component.css'],\n  templateUrl: './dialog-header.component.html',\n})\nexport class FlagDialogHeaderComponent {\n  close = output();\n\n  onClose(): void {\n    this.close.emit();\n  }\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, output } from '@angular/core';\n\nimport { FlagButtonDirective } from '../../../directives';\nimport { FlagIconComponent } from '../../icon';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  imports: [FlagButtonDirective, FlagIconComponent],\n  selector: 'flag-dialog-header',\n  styleUrls: ['../../card/card-header/card-header.component.css', './dialog-header.component.css'],\n  templateUrl: './dialog-header.component.html',\n})\nexport class FlagDialogHeaderComponent {\n  close = output();\n\n  onClose(): void {\n    this.close.emit();\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2886,7 +2868,7 @@
         },
         {
             "name": "FlagSkeletonComponent",
-            "id": "component-FlagSkeletonComponent-632f11001efa8dbbd06747b766c502f10d8e9b51868ec278a9634fb0a94131855fda4fde74da985d85a8f5b289c06f1a7083f5b8b7617ba60c0aff0b04ba3a52",
+            "id": "component-FlagSkeletonComponent-e0bed504a0d234f4a8e2da211c95fca82ad678be4138fcdc6859becc8862dfa373bac9b1c6f4e36eb09eb47d12e42029b1dbc9d25b9fd85a61fe5307fffc838f",
             "file": "projects/flagarchive/src/components/skeleton/skeleton.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -2907,7 +2889,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 16,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -2916,7 +2898,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 12,
                     "type": "boolean",
                     "decorators": []
                 }
@@ -2928,17 +2910,12 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": true,
-            "imports": [
-                {
-                    "name": "CommonModule",
-                    "type": "module"
-                }
-            ],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'flag-skeleton',\n  standalone: true,\n  imports: [CommonModule],\n  template: '',\n  styleUrl: './skeleton.component.css',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class FlagSkeletonComponent {\n  @HostBinding('class.soft')\n  @Input()\n  public soft = false;\n\n  @HostBinding('class.loading')\n  @Input()\n  public loading = false;\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  selector: 'flag-skeleton',\n  styleUrl: './skeleton.component.css',\n  template: '',\n})\nexport class FlagSkeletonComponent {\n  @HostBinding('class.soft')\n  @Input()\n  public soft = false;\n\n  @HostBinding('class.loading')\n  @Input()\n  public loading = false;\n}\n",
             "styleUrl": "./skeleton.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -2947,7 +2924,7 @@
         },
         {
             "name": "FlagStepperComponent",
-            "id": "component-FlagStepperComponent-2673bb8d6ed8a8d0e704fed60a6ab9ae10e9c565e9e73466ee27f2ad303d88b3df5e3463892971fad6aa0df7ddb1793199b47a24b46abab413a409cbdce9d0f9",
+            "id": "component-FlagStepperComponent-a4abcc1b58a81b65e123d2307781d79addab3f71d76c5304be80db84b3e071ed80aef4ba43aa8310113ff96dd0de3b881ad5d3127edd82aa1f519acbefc5028a",
             "file": "projects/flagarchive/src/components/stepper/stepper.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -2974,7 +2951,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 30,
+                    "line": 27,
                     "modifierKind": [
                         125
                     ],
@@ -2991,7 +2968,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 30,
+                    "line": 27,
                     "modifierKind": [
                         125
                     ],
@@ -3005,7 +2982,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 25,
+                    "line": 22,
                     "modifierKind": [
                         123
                     ]
@@ -3018,7 +2995,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 26,
+                    "line": 23,
                     "modifierKind": [
                         123
                     ]
@@ -3031,7 +3008,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 27,
+                    "line": 24,
                     "modifierKind": [
                         123
                     ]
@@ -3044,7 +3021,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 29,
+                    "line": 26,
                     "modifierKind": [
                         125
                     ]
@@ -3057,7 +3034,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 32,
+                    "line": 29,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -3077,7 +3054,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 39,
+                    "line": 36,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -3100,16 +3077,12 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": true,
-            "imports": [
-                {
-                    "name": "NgClass"
-                }
-            ],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  ChangeDetectorRef,\n  Component,\n  DestroyRef,\n  OnInit,\n  inject,\n  model,\n} from '@angular/core';\nimport { takeUntilDestroyed } from '@angular/core/rxjs-interop';\n\nimport { Step } from './stepper.model';\nimport { FlagStepperService } from './stepper.service';\nimport { NgClass } from '@angular/common';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  imports: [NgClass],\n  selector: 'flag-stepper',\n  standalone: true,\n  styleUrls: ['./stepper.component.css'],\n  templateUrl: './stepper.component.html',\n})\nexport class FlagStepperComponent implements OnInit {\n  private cdr = inject(ChangeDetectorRef);\n  private destroyRef = inject(DestroyRef);\n  private stepperService = inject(FlagStepperService);\n\n  public steps = model.required<Step[]>();\n  public activeStep = model(0);\n\n  public ngOnInit(): void {\n    this.stepperService.steps$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(steps => {\n      this.steps.set(steps);\n      this.cdr.detectChanges();\n    });\n  }\n\n  public setActiveStep(index: number): void {\n    this.activeStep.set(index);\n  }\n}\n",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  ChangeDetectorRef,\n  Component,\n  DestroyRef,\n  OnInit,\n  inject,\n  model,\n} from '@angular/core';\nimport { takeUntilDestroyed } from '@angular/core/rxjs-interop';\n\nimport { Step } from './stepper.model';\nimport { FlagStepperService } from './stepper.service';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  selector: 'flag-stepper',\n  styleUrls: ['./stepper.component.css'],\n  templateUrl: './stepper.component.html',\n})\nexport class FlagStepperComponent implements OnInit {\n  private cdr = inject(ChangeDetectorRef);\n  private destroyRef = inject(DestroyRef);\n  private stepperService = inject(FlagStepperService);\n\n  public steps = model.required<Step[]>();\n  public activeStep = model(0);\n\n  public ngOnInit(): void {\n    this.stepperService.steps$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(steps => {\n      this.steps.set(steps);\n      this.cdr.detectChanges();\n    });\n  }\n\n  public setActiveStep(index: number): void {\n    this.activeStep.set(index);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3215,7 +3188,7 @@
         },
         {
             "name": "FlagTabGroupComponent",
-            "id": "component-FlagTabGroupComponent-494d6da487435174a29935110aeea4c90f10201259014ee8e2515ae60f2b009c714caa16a539cb0e5d6d7b345ece6fcf3a5426e2f71bd1e7ad46a975ece53ae7",
+            "id": "component-FlagTabGroupComponent-61d0c65ab736395fab6d25f8847532f3370e63296c07e200cc2510dc18e42792de0104933cb2597e69c5ff166f253e7d193d3bc6aab3756a3bb39b4c7334d57d",
             "file": "projects/flagarchive/src/components/tab-group/tab-group.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -3240,7 +3213,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 17,
+                    "line": 16,
                     "modifierKind": [
                         125
                     ],
@@ -3257,7 +3230,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 17,
+                    "line": 16,
                     "modifierKind": [
                         125
                     ],
@@ -3271,7 +3244,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 19,
+                    "line": 18,
                     "modifierKind": [
                         125
                     ]
@@ -3284,7 +3257,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 20,
+                    "line": 19,
                     "modifierKind": [
                         125
                     ]
@@ -3297,7 +3270,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 15,
+                    "line": 14,
                     "modifierKind": [
                         125
                     ]
@@ -3317,7 +3290,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 22,
+                    "line": 21,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -3340,7 +3313,7 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": true,
+            "standalone": false,
             "imports": [
                 {
                     "name": "FlagTabComponent",
@@ -3353,7 +3326,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { NgStyle } from '@angular/common';\nimport { ChangeDetectionStrategy, Component, computed, input, model } from '@angular/core';\n\nimport { FlagTabComponent, Tab } from '../tab';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  imports: [FlagTabComponent, NgStyle],\n  selector: 'flag-tab-group',\n  standalone: true,\n  styleUrl: './tab-group.component.css',\n  templateUrl: './tab-group.component.html',\n})\nexport class FlagTabGroupComponent {\n  public tabs = input.required<Tab[]>();\n\n  public active = model(0);\n\n  public linePosition = computed(() => `${(100 / this.tabs().length) * this.active()}%`);\n  public lineWidth = computed(() => `${100 / this.tabs().length}%`);\n\n  public setActive(id: number): void {\n    this.active.set(id);\n  }\n}\n",
+            "sourceCode": "import { NgStyle } from '@angular/common';\nimport { ChangeDetectionStrategy, Component, computed, input, model } from '@angular/core';\n\nimport { FlagTabComponent, Tab } from '../tab';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  imports: [FlagTabComponent, NgStyle],\n  selector: 'flag-tab-group',\n  styleUrl: './tab-group.component.css',\n  templateUrl: './tab-group.component.html',\n})\nexport class FlagTabGroupComponent {\n  public tabs = input.required<Tab[]>();\n\n  public active = model(0);\n\n  public linePosition = computed(() => `${(100 / this.tabs().length) * this.active()}%`);\n  public lineWidth = computed(() => `${100 / this.tabs().length}%`);\n\n  public setActive(id: number): void {\n    this.active.set(id);\n  }\n}\n",
             "styleUrl": "./tab-group.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -3363,7 +3336,7 @@
         },
         {
             "name": "FlagYearPickerComponent",
-            "id": "component-FlagYearPickerComponent-ee5b2c4e72b59ac7b26305f940eeb6b2dd67e09b44ee2ff1b8589358bcd476ba08e42bf75212f16c21011f0e91a4ee0b47dcbac07c108a944f93fba9da9a531d",
+            "id": "component-FlagYearPickerComponent-d1391431f82691fdb836811d941df8c755ce619a0eb53cc8629035d8e3e9f5e215d65d1cac3d0d7636f98d1ea71e9c597e0c71840c8b32bb1e0cf238352014f0",
             "file": "projects/flagarchive/src/components/year-picker/year-picker.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -3390,7 +3363,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 17,
+                    "line": 15,
                     "required": false
                 },
                 {
@@ -3401,7 +3374,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 18,
+                    "line": 16,
                     "required": false
                 },
                 {
@@ -3412,7 +3385,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 19,
+                    "line": 17,
                     "required": false
                 },
                 {
@@ -3423,7 +3396,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 20,
+                    "line": 18,
                     "required": false
                 }
             ],
@@ -3436,7 +3409,7 @@
                     "type": "[number, number]",
                     "optional": false,
                     "description": "",
-                    "line": 22
+                    "line": 20
                 },
                 {
                     "name": "max",
@@ -3446,7 +3419,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 17,
+                    "line": 15,
                     "required": false
                 },
                 {
@@ -3457,7 +3430,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 18,
+                    "line": 16,
                     "required": false
                 },
                 {
@@ -3468,7 +3441,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 19,
+                    "line": 17,
                     "required": false
                 },
                 {
@@ -3479,7 +3452,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 20,
+                    "line": 18,
                     "required": false
                 }
             ],
@@ -3490,7 +3463,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 32,
+                    "line": 30,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -3500,7 +3473,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 36,
+                    "line": 34,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -3510,7 +3483,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 40,
+                    "line": 38,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -3520,7 +3493,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 24,
+                    "line": 22,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -3530,7 +3503,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 47,
+                    "line": 45,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -3540,7 +3513,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 54,
+                    "line": 52,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -3557,7 +3530,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 59,
+                    "line": 57,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -3577,12 +3550,8 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": true,
+            "standalone": false,
             "imports": [
-                {
-                    "name": "CommonModule",
-                    "type": "module"
-                },
                 {
                     "name": "FlagButtonDirective",
                     "type": "directive"
@@ -3599,7 +3568,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { ChangeDetectionStrategy, Component, input, model, OnInit } from '@angular/core';\n\nimport { FlagButtonDirective } from '../../directives';\nimport { RangePipe } from '../../pipes';\nimport { FlagIconComponent } from '../icon';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  imports: [CommonModule, FlagButtonDirective, FlagIconComponent, RangePipe],\n  selector: 'flag-year-picker',\n  standalone: true,\n  styleUrls: ['./year-picker.component.css'],\n  templateUrl: './year-picker.component.html',\n})\nexport class FlagYearPickerComponent implements OnInit {\n  max = input(0);\n  min = input(0);\n  rangeSize = input(9);\n  selected = model(0);\n\n  activeRange!: [number, number];\n\n  ngOnInit() {\n    const difference = this.max() - this.selected();\n    const multiplier = Math.floor(difference / this.rangeSize());\n    const range = this.rangeSize() * multiplier;\n    const minValue = this.max() - this.rangeSize() + 1 - range;\n    this.activeRange = [minValue < this.min() ? this.min() : minValue, this.max() - range];\n  }\n\n  goToEnd() {\n    this.activeRange = [this.max() - this.rangeSize() + 1, this.max()];\n  }\n\n  goToStart() {\n    this.activeRange = [this.min(), this.min() + this.rangeSize() - 1];\n  }\n\n  next() {\n    const maxValue = this.activeRange[1] + this.rangeSize();\n    const start = this.activeRange[1] + 1;\n    const end = maxValue > this.max() ? this.max() : maxValue;\n    this.activeRange = [start, end];\n  }\n\n  previous() {\n    const minValue = this.activeRange[0] - this.rangeSize();\n    const start = minValue < this.min() ? this.min() : minValue;\n    const end = this.activeRange[0] - 1;\n    this.activeRange = [start, end];\n  }\n\n  reset() {\n    this.goToEnd();\n    this.selected.set(this.max());\n  }\n\n  setYear(year: number) {\n    this.selected.set(year);\n  }\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, input, model, OnInit } from '@angular/core';\n\nimport { FlagButtonDirective } from '../../directives';\nimport { RangePipe } from '../../pipes';\nimport { FlagIconComponent } from '../icon';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  imports: [FlagButtonDirective, FlagIconComponent, RangePipe],\n  selector: 'flag-year-picker',\n  styleUrls: ['./year-picker.component.css'],\n  templateUrl: './year-picker.component.html',\n})\nexport class FlagYearPickerComponent implements OnInit {\n  max = input(0);\n  min = input(0);\n  rangeSize = input(9);\n  selected = model(0);\n\n  activeRange!: [number, number];\n\n  ngOnInit() {\n    const difference = this.max() - this.selected();\n    const multiplier = Math.floor(difference / this.rangeSize());\n    const range = this.rangeSize() * multiplier;\n    const minValue = this.max() - this.rangeSize() + 1 - range;\n    this.activeRange = [minValue < this.min() ? this.min() : minValue, this.max() - range];\n  }\n\n  goToEnd() {\n    this.activeRange = [this.max() - this.rangeSize() + 1, this.max()];\n  }\n\n  goToStart() {\n    this.activeRange = [this.min(), this.min() + this.rangeSize() - 1];\n  }\n\n  next() {\n    const maxValue = this.activeRange[1] + this.rangeSize();\n    const start = this.activeRange[1] + 1;\n    const end = maxValue > this.max() ? this.max() : maxValue;\n    this.activeRange = [start, end];\n  }\n\n  previous() {\n    const minValue = this.activeRange[0] - this.rangeSize();\n    const start = minValue < this.min() ? this.min() : minValue;\n    const end = this.activeRange[0] - 1;\n    this.activeRange = [start, end];\n  }\n\n  reset() {\n    this.goToEnd();\n    this.selected.set(this.max());\n  }\n\n  setYear(year: number) {\n    this.selected.set(year);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3936,7 +3905,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<SkeletonArgs>",
-                "defaultValue": "{\n  title: 'Components/Skeleton',\n  component: FlagSkeletonComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [FlagSkeletonComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `\n      <flag-skeleton\n        style=\"height: 8rem; width: 12rem\"\n        [loading]=\"loading\"\n        [soft]=\"soft\"\n      />\n    `,\n  }),\n  argTypes: {},\n}"
+                "defaultValue": "{\n  title: 'Components/Skeleton',\n  component: FlagSkeletonComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [FlagSkeletonComponent],\n    }),\n  ],\n  render: args => ({\n    props: args,\n    template: `\n      <flag-skeleton\n        style=\"height: 8rem; width: 12rem\"\n        [loading]=\"loading\"\n        [soft]=\"soft\"\n      />\n    `,\n  }),\n  argTypes: {},\n}"
             },
             {
                 "name": "meta",
@@ -4685,7 +4654,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<SkeletonArgs>",
-                    "defaultValue": "{\n  title: 'Components/Skeleton',\n  component: FlagSkeletonComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [FlagSkeletonComponent],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `\n      <flag-skeleton\n        style=\"height: 8rem; width: 12rem\"\n        [loading]=\"loading\"\n        [soft]=\"soft\"\n      />\n    `,\n  }),\n  argTypes: {},\n}"
+                    "defaultValue": "{\n  title: 'Components/Skeleton',\n  component: FlagSkeletonComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [FlagSkeletonComponent],\n    }),\n  ],\n  render: args => ({\n    props: args,\n    template: `\n      <flag-skeleton\n        style=\"height: 8rem; width: 12rem\"\n        [loading]=\"loading\"\n        [soft]=\"soft\"\n      />\n    `,\n  }),\n  argTypes: {},\n}"
                 },
                 {
                     "name": "Soft",

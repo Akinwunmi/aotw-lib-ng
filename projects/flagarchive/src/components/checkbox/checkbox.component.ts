@@ -20,7 +20,6 @@ import { FlagIconComponent } from '../icon';
     },
   ],
   selector: 'flag-checkbox',
-  standalone: true,
   styleUrls: ['../form-field/checkable-input.css', './checkbox.component.css'],
   templateUrl: './checkbox.component.html',
 })

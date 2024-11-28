@@ -9,14 +9,17 @@
   </button>
 </header>
 <main>
-  <flag-form-field>
-    <flag-checkbox [checked]="isMenuOpen" (click)="toggleMenu()">
-      Menu is open
-    </flag-checkbox>
-  </flag-form-field>
-  <button flagButton (click)="openDialog()">
-    Open dialog
-  </button>
+  <div>
+    <button flagButton (click)="openDialog()">
+      Open dialog
+    </button>
+    <flag-form-field>
+      <flag-checkbox [checked]="isMenuOpen" (click)="toggleMenu()">
+        Menu is open
+      </flag-checkbox>
+    </flag-form-field>
+  </div>
+  <flag-year-picker [max]="20" [min]="5" [rangeSize]="12" [selected]="12" />
 </main>
 
 <ng-template #dropdown>
