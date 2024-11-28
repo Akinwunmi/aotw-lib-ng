@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, input, model, OnInit } from '@angular/core';
 
 import { FlagButtonDirective } from '../../directives';
@@ -7,9 +6,8 @@ import { FlagIconComponent } from '../icon';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FlagButtonDirective, FlagIconComponent, RangePipe],
+  imports: [FlagButtonDirective, FlagIconComponent, RangePipe],
   selector: 'flag-year-picker',
-  standalone: true,
   styleUrls: ['./year-picker.component.css'],
   templateUrl: './year-picker.component.html',
 })

@@ -1,13 +1,10 @@
 import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'flag-skeleton',
-  standalone: true,
-  imports: [CommonModule],
-  template: '',
-  styleUrl: './skeleton.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'flag-skeleton',
+  styleUrl: './skeleton.component.css',
+  template: '',
 })
 export class FlagSkeletonComponent {
   @HostBinding('class.soft')

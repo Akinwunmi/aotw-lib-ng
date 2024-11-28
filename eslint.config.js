@@ -37,7 +37,6 @@ export default tseslint.config(
         },
       ],
       '@angular-eslint/prefer-on-push-component-change-detection': 'error',
-      '@angular-eslint/prefer-standalone': ['error'],
       '@typescript-eslint/naming-convention': [
         'error',
         {

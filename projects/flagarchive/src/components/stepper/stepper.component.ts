@@ -11,13 +11,10 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { Step } from './stepper.model';
 import { FlagStepperService } from './stepper.service';
-import { NgClass } from '@angular/common';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgClass],
   selector: 'flag-stepper',
-  standalone: true,
   styleUrls: ['./stepper.component.css'],
   templateUrl: './stepper.component.html',
 })
