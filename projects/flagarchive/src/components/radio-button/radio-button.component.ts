@@ -1,14 +1,14 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  HostBinding,
-  HostListener,
-  model,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, model } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    '[class.checked]': 'checked()',
+    '[class.disabled]': 'disabled()',
+    '(click)': 'onClick()',
+    '(keyup)': 'onKeyUp($event)',
+  },
   providers: [
     {
       multi: true,
@@ -22,40 +22,48 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   templateUrl: './radio-button.component.html',
 })
 export class FlagRadioButtonComponent implements ControlValueAccessor {
+  label = input.required<string>();
+  value = input.required<string>();
+
   checked = model(false);
   disabled = model(false);
   name = model('');
 
   uuid = crypto.randomUUID();
 
-  @HostBinding('class.checked')
-  get checkedClass(): boolean {
-    return this.checked();
-  }
+  #onChange: (value: string) => void = () => {
+    // noop
+  };
 
-  @HostBinding('class.disabled')
-  get disabledClass(): boolean {
-    return this.disabled();
-  }
+  #onTouched: () => void = () => {
+    // noop
+  };
 
-  @HostListener('click')
   onClick() {
     this.checked.set(true);
+    this.#onChange(this.value());
+    this.#onTouched();
   }
 
-  registerOnChange(fn: (value: boolean) => void) {
-    this.checked.subscribe(fn);
+  onKeyUp(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      this.onClick();
+    }
   }
 
-  registerOnTouched() {
-    // noop
+  registerOnChange(fn: (value: string) => void) {
+    this.#onChange = fn;
+  }
+
+  registerOnTouched(fn: () => void) {
+    this.#onTouched = fn;
   }
 
   setDisabledState(disabled: boolean) {
     this.disabled.set(disabled);
   }
 
-  writeValue(value: boolean) {
-    this.checked.set(value);
+  writeValue(value: string) {
+    this.checked.set(this.value() === value);
   }
 }

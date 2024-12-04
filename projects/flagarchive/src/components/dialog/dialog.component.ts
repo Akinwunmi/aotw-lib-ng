@@ -5,6 +5,7 @@ import { FlagCardComponent } from '../card';
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'flag-dialog',
+  standalone: true,
   styleUrls: ['../card/card.component.css', './dialog.component.css'],
   templateUrl: '../card/card.component.html',
 })

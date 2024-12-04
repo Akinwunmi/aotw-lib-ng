@@ -1,16 +1,17 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  HostBinding,
-  HostListener,
-  model,
-} from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ChangeDetectionStrategy, Component, input, model } from '@angular/core';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { FlagIconComponent } from '../icon';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    '[class.checked]': 'checked()',
+    '[class.disabled]': 'disabled()',
+    '[class.indeterminate]': 'indeterminate()',
+    '(click)': 'onClick()',
+    '(keyup)': 'onKeyUp($event)',
+  },
   imports: [FlagIconComponent],
   providers: [
     {
@@ -20,10 +21,13 @@ import { FlagIconComponent } from '../icon';
     },
   ],
   selector: 'flag-checkbox',
+  standalone: true,
   styleUrls: ['../form-field/checkable-input.css', './checkbox.component.css'],
   templateUrl: './checkbox.component.html',
 })
-export class FlagCheckboxComponent implements ControlValueAccessor {
+export class FlagCheckboxComponent {
+  label = input.required<string>();
+
   checked = model(false);
   disabled = model(false);
   indeterminate = model(false);
@@ -31,27 +35,17 @@ export class FlagCheckboxComponent implements ControlValueAccessor {
 
   uuid = crypto.randomUUID();
 
-  @HostBinding('class.checked')
-  get checkedClass(): boolean {
-    return this.checked();
-  }
-
-  @HostBinding('class.disabled')
-  get disabledClass(): boolean {
-    return this.disabled();
-  }
-
-  @HostBinding('class.indeterminate')
-  get indeterminateClass(): boolean {
-    return this.indeterminate();
-  }
-
-  @HostListener('click')
   onClick() {
     if (!this.checked()) {
       this.indeterminate.set(false);
     }
     this.checked.set(!this.checked());
+  }
+
+  onKeyUp(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      this.onClick();
+    }
   }
 
   registerOnChange(fn: (value: boolean) => void) {

@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FlagCheckboxComponent } from './checkbox.component';
 
-describe('RadioButtonComponent', () => {
+describe('FlagCheckboxComponent', () => {
   let component: FlagCheckboxComponent;
   let fixture: ComponentFixture<FlagCheckboxComponent>;
 

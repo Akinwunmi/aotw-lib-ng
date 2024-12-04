@@ -57,7 +57,7 @@
   }
 
   &.disabled {
-    color: var(--flag-color-grey-500);
+    color: var(--flag-color-grey-600);
     pointer-events: none;
     user-select: none;
 

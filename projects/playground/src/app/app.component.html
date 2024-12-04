@@ -9,44 +9,19 @@
   </button>
 </header>
 <main>
-  <div>
-    <button flagButton (click)="openDialog()">
-      Open dialog
-    </button>
-    <flag-form-field>
-      <flag-checkbox [checked]="isMenuOpen" (click)="toggleMenu()">
-        Menu is open
-      </flag-checkbox>
-    </flag-form-field>
-  </div>
-  <flag-year-picker [max]="20" [min]="5" [rangeSize]="12" [selected]="12" />
+  <flag-checkbox label="Menu is open" [checked]="isMenuOpen" (click)="toggleMenu()" />
+  <router-outlet />
 </main>
 
 <ng-template #dropdown>
   <flag-card>
-    <flag-list-item role="button" (click)="closeMenu()">
-      <flag-icon>edit</flag-icon>
-      Create
+    <flag-list-item role="button" (click)="goToPage('home')">
+      <flag-icon>home</flag-icon>
+      Home
     </flag-list-item>
-    <flag-list-item role="button" (click)="closeMenu()">
-      <flag-icon>logout</flag-icon>
-      Log out
+    <flag-list-item role="button" (click)="goToPage('form')">
+      <flag-icon>description</flag-icon>
+      Form
     </flag-list-item>
   </flag-card>
-</ng-template>
-
-<ng-template #dialog>
-  <flag-dialog [large]="true">
-    <flag-dialog-header (close)="closeDialog()">
-      Test dialog
-    </flag-dialog-header>
-    <flag-dialog-content>
-      This is a test dialog.
-    </flag-dialog-content>
-    <flag-dialog-footer>
-      <button flagButton (click)="closeDialog()">
-        Annuleren
-      </button>
-    </flag-dialog-footer>
-  </flag-dialog>  
 </ng-template>

@@ -1,0 +1,22 @@
+<div>
+  <button flagButton (click)="openDialog()">
+    Open dialog
+  </button>
+</div>
+<flag-year-picker [max]="20" [min]="5" [rangeSize]="12" [selected]="12" />
+
+<ng-template #dialog>
+  <flag-dialog [large]="true">
+    <flag-dialog-header (close)="closeDialog()">
+      Test dialog
+    </flag-dialog-header>
+    <flag-dialog-content>
+      This is a test dialog.
+    </flag-dialog-content>
+    <flag-dialog-footer>
+      <button flagButton (click)="closeDialog()">
+        Annuleren
+      </button>
+    </flag-dialog-footer>
+  </flag-dialog>  
+</ng-template>

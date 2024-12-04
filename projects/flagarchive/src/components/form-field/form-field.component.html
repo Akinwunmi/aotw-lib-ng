@@ -1,4 +1,9 @@
-<ng-content />
+<fieldset>
+  <legend flagLabel [attr.required]="required() || undefined">
+    {{ label() }}
+  </legend>
+  <ng-content />
+</fieldset>
 @if (infoMessage()) {
   <p>{{ infoMessage() }}</p>
 }

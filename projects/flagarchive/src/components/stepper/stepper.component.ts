@@ -15,6 +15,7 @@ import { FlagStepperService } from './stepper.service';
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'flag-stepper',
+  standalone: true,
   styleUrls: ['./stepper.component.css'],
   templateUrl: './stepper.component.html',
 })

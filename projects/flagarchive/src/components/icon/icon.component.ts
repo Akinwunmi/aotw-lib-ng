@@ -23,6 +23,10 @@ export class FlagIconComponent implements OnInit {
   protected iconClass = 'material-symbols-rounded';
 
   public ngOnInit(): void {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
     const height = getComputedStyle(this.elementRef.nativeElement).fontSize;
     this.renderer.setStyle(this.elementRef.nativeElement, 'width', height);
   }
