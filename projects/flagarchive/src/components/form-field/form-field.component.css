@@ -5,6 +5,19 @@
   gap: var(--flag-space-sm);
 }
 
+fieldset {
+  border: none;
+  display: grid;
+  gap: var(--flag-space-sm);
+  margin: 0;
+  padding: 0;
+
+  legend {
+    margin-bottom: var(--flag-space-sm);
+    padding: 0;
+  }
+}
+
 p {
   font-size: var(--flag-font-size-xs);
   line-height: var(--flag-font-line-height-xs);
@@ -15,6 +28,6 @@ p {
   }
 
   &.error {
-    color: var(--flag-color-error-500);
+    color: var(--flag-color-error-600);
   }
 }

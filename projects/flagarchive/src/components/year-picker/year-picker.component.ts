@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, input, model, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  input,
+  linkedSignal,
+  OnInit,
+  output,
+} from '@angular/core';
 
 import { FlagButtonDirective } from '../../directives';
 import { RangePipe } from '../../pipes';
@@ -8,6 +15,7 @@ import { FlagIconComponent } from '../icon';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [FlagButtonDirective, FlagIconComponent, RangePipe],
   selector: 'flag-year-picker',
+  standalone: true,
   styleUrls: ['./year-picker.component.css'],
   templateUrl: './year-picker.component.html',
 })
@@ -15,12 +23,16 @@ export class FlagYearPickerComponent implements OnInit {
   max = input(0);
   min = input(0);
   rangeSize = input(9);
-  selected = model(0);
+  selected = input(0);
+
+  selectedChange = output<number>();
+
+  active = linkedSignal(() => this.selected());
 
   activeRange!: [number, number];
 
   ngOnInit() {
-    const difference = this.max() - this.selected();
+    const difference = this.max() - this.active();
     const multiplier = Math.floor(difference / this.rangeSize());
     const range = this.rangeSize() * multiplier;
     const minValue = this.max() - this.rangeSize() + 1 - range;
@@ -51,10 +63,12 @@ export class FlagYearPickerComponent implements OnInit {
 
   reset() {
     this.goToEnd();
-    this.selected.set(this.max());
+    this.active.set(this.selected());
+    this.selectedChange.emit(this.selected());
   }
 
   setYear(year: number) {
-    this.selected.set(year);
+    this.active.set(year);
+    this.selectedChange.emit(year);
   }
 }

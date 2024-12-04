@@ -17,7 +17,3 @@ export const FORM_FIELD_ARGS: FormFieldArgs = {
   readonly: false,
   required: true,
 };
-
-export function setLabel(label?: string, required?: boolean): string {
-  return label ? `<label flagLabel ${required && 'required'}>${label}</label>` : '';
-}

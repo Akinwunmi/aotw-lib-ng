@@ -11,13 +11,13 @@
   <button flagButton [disabled]="max() === activeRange[1]" (click)="goToEnd()">
     <flag-icon>keyboard_double_arrow_right</flag-icon>
   </button>
-  <button flagButton [disabled]="max() === selected()" (click)="reset()">
+  <button flagButton [disabled]="active() === selected()" (click)="reset()">
     <flag-icon>refresh</flag-icon>
   </button>
 </div>
 <div class="years">
   @for (year of activeRange | range; track $index) {
-    <button flagButton [attr.raised]="year === selected() || undefined" (click)="setYear(year)">
+    <button flagButton [attr.raised]="year === active() || undefined" (click)="setYear(year)">
       {{ year }}
     </button>
   }

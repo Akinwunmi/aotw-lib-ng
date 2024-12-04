@@ -1,75 +1,57 @@
-import { Dialog, DialogRef } from '@angular/cdk/dialog';
 import { NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject, TemplateRef, viewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, viewChild } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 import {
   FlagCardComponent,
   FlagCheckboxComponent,
-  FlagFormFieldComponent,
   FlagIconComponent,
   FlagListItemComponent,
-  FlagDialogComponent,
-  FlagDialogContentComponent,
-  FlagDialogFooterComponent,
-  FlagDialogHeaderComponent,
   FlagPillComponent,
   PillType,
-  FlagYearPickerComponent,
 } from 'projects/flagarchive/src/components';
-import { FlagButtonDirective, FlagDropdownDirective } from 'projects/flagarchive/src/directives';
+import { FlagDropdownDirective } from 'projects/flagarchive/src/directives';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    FlagButtonDirective,
     FlagCardComponent,
     FlagCheckboxComponent,
     FlagDropdownDirective,
-    FlagFormFieldComponent,
     FlagIconComponent,
     FlagListItemComponent,
-    FlagDialogComponent,
-    FlagDialogContentComponent,
-    FlagDialogFooterComponent,
-    FlagDialogHeaderComponent,
     FlagPillComponent,
-    FlagYearPickerComponent,
     NgOptimizedImage,
+    RouterOutlet,
   ],
   selector: 'app-root',
   styleUrl: './app.component.css',
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  readonly #dialog = inject(Dialog);
+  readonly #router = inject(Router);
 
-  dialogTemplate = viewChild.required<TemplateRef<FlagDialogComponent>>('dialog');
   dropdownTrigger = viewChild.required(FlagDropdownDirective);
 
   pillType = PillType;
 
   isMenuOpen = false;
 
-  #dialogRef?: DialogRef<string>;
-
-  closeDialog() {
-    this.#dialogRef?.close();
-  }
-
-  closeMenu() {
-    this.dropdownTrigger().close();
-    this.isMenuOpen = false;
-  }
-
-  openDialog() {
-    this.#dialogRef = this.#dialog.open<string>(this.dialogTemplate());
+  goToPage(page: string) {
+    this.#router.navigate([page]);
+    this.#closeMenu();
   }
 
   toggleMenu() {
     if (this.isMenuOpen) {
-      this.closeMenu();
+      this.#closeMenu();
       return;
     }
     this.#openMenu();
+  }
+
+  #closeMenu() {
+    this.dropdownTrigger().close();
+    this.isMenuOpen = false;
   }
 
   #openMenu() {

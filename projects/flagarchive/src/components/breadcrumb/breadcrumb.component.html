@@ -8,5 +8,17 @@
   >
     {{ item.title }}
   </button>
+  @for (additionalItem of item.additionalItems; track $index) {
+    <p>/</p>
+    <button
+      flagButton
+      ghost
+      tabindex="0"
+      (click)="selectItem(additionalItem)"
+      (keyup)="selectItem(additionalItem)"
+    >
+      {{ additionalItem.title }}
+    </button>
+  }
   <flag-icon>keyboard_arrow_right</flag-icon>
 }

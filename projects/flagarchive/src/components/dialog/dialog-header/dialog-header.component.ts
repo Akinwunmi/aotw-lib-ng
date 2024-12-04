@@ -7,6 +7,7 @@ import { FlagIconComponent } from '../../icon';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [FlagButtonDirective, FlagIconComponent],
   selector: 'flag-dialog-header',
+  standalone: true,
   styleUrls: ['../../card/card-header/card-header.component.css', './dialog-header.component.css'],
   templateUrl: './dialog-header.component.html',
 })

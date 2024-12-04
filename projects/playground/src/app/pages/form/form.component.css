@@ -1,0 +1,10 @@
+:host {
+  display: grid;
+  gap: var(--flag-space-2xl);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+form {
+  display: grid;
+  gap: var(--flag-space-md);
+}

@@ -8,6 +8,8 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
   templateUrl: './form-field.component.html',
 })
 export class FlagFormFieldComponent {
-  public errorMessage = input<string>();
-  public infoMessage = input<string>();
+  label = input.required<string>();
+  errorMessage = input<string>();
+  infoMessage = input<string>();
+  required = input(false);
 }

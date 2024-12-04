@@ -1,0 +1,23 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <flag-input formControlName="name" label="Name" placeholder="Name" />
+  <flag-checkbox-group formArrayName="hobbies" label="Checkbox">
+    @for (hobby of hobbies; track $index) {
+      <flag-checkbox [formControlName]="$index" [label]="hobby" />
+    }
+  </flag-checkbox-group>
+  <flag-radio-group formControlName="favoriteHobby" label="Favorite hobby" [required]="true">
+    @for (hobby of hobbies; track $index) {
+      <flag-radio-button [label]="hobby" [value]="hobby" />
+    }
+  </flag-radio-group>
+  <flag-input
+    formControlName="favoriteNumber"
+    label="Favorite number"
+    placeholder="Favorite number"
+    type="number"
+  />
+  <button flagButton raised type="submit" [disabled]="form.invalid || form.pristine">
+    Submit
+  </button>
+</form>
+{{ form.value | json }}

@@ -22,13 +22,7 @@ header {
 }
 
 main {
-  display: flex;
+  display: grid;
   gap: var(--flag-space-lg);
   padding: var(--flag-space-lg);
-
-  div {
-    align-content: flex-start;
-    display: grid;
-    gap: var(--flag-space-md);
-  }
 }

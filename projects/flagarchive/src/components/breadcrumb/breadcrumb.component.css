@@ -10,3 +10,9 @@ button {
   min-width: min-content;
   padding-inline: var(--flag-space-sm);
 }
+
+p {
+  font-weight: var(--flag-font-weight-bold);
+  margin-inline: var(--flag-space-xs);
+  user-select: none;
+}

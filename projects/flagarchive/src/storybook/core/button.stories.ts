@@ -11,7 +11,7 @@ interface StoryArgs {
   rounded?: boolean;
   secondary?: boolean;
   text?: string;
-};
+}
 
 const args: StoryArgs = {
   disabled: false,
@@ -31,7 +31,7 @@ const meta: Meta<StoryArgs> = {
       imports: [FlagButtonDirective, FlagIconComponent],
     }),
   ],
-  render: (props) => ({
+  render: props => ({
     props,
     template: `
       <button
@@ -53,5 +53,42 @@ export default meta;
 type Story = StoryObj<StoryArgs>;
 
 export const Primary: Story = {
+  args: {
+    ...args,
+    raised: false,
+  },
+};
+
+export const Raised: Story = {
   args,
+};
+
+export const Rounded: Story = {
+  args: {
+    ...args,
+    rounded: true,
+  },
+};
+
+export const Ghost: Story = {
+  args: {
+    ...args,
+    raised: false,
+    ghost: true,
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    ...args,
+    raised: false,
+    secondary: true,
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    ...args,
+    disabled: true,
+  },
 };

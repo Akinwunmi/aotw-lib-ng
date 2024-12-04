@@ -13,8 +13,8 @@
   width: 100%;
   
   &.disabled {
-    background-color: var(--flag-color-grey-300);
-    color: var(--flag-color-grey-500);
+    background-color: var(--flag-color-grey-200);
+    color: var(--flag-color-grey-600);
     pointer-events: none;
   }
 }

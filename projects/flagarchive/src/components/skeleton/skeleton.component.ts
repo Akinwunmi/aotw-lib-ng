@@ -3,6 +3,7 @@ import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'flag-skeleton',
+  standalone: true,
   styleUrl: './skeleton.component.css',
   template: '',
 })
